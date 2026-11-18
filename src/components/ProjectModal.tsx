@@ -58,8 +58,20 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             {project.subtitle}
           </p>
 
-          {/* Real Project Screenshot if available */}
-          {project.image && (
+          {/* Real Project Video Demo or Screenshot */}
+          {project.videoUrl ? (
+            <div className="mb-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-emerald-500/20 shadow-lg bg-black">
+              <video
+                src={project.videoUrl}
+                controls
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full max-h-[440px] object-contain mx-auto"
+              />
+            </div>
+          ) : project.image ? (
             <div className="mb-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-emerald-500/20 shadow-lg">
               <img
                 src={project.image}
@@ -67,7 +79,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 className="w-full h-auto object-cover"
               />
             </div>
-          )}
+          ) : null}
 
           {/* Detailed Narrative */}
           <div className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6 space-y-3">

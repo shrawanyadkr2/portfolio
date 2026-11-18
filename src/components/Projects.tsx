@@ -67,8 +67,8 @@ export const Projects: React.FC = () => {
               <div>
                 {/* Clean, Full-Bleed Visual Header without any overlapping text or badge covers */}
                 <div className="relative h-52 bg-slate-950 overflow-hidden border-b border-emerald-500/15">
-                  {project.id === 'resume-genie-app' && project.videoUrl ? (
-                    /* Real Screen Recording Video Loop for Resume Genie */
+                  {project.videoUrl ? (
+                    /* Real Screen Recording Video Loop for projects with video (Resume Genie Mobile & ResumeBuilder Full Stack) */
                     <div className="w-full h-full overflow-hidden bg-black flex items-center justify-center">
                       <video
                         src={project.videoUrl}

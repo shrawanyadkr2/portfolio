@@ -230,6 +230,7 @@ export const PROJECTS: Project[] = [
     githubFrontendUrl: "https://github.com/shrawanyadkr2/resumebuilder-frontend",
     githubBackendUrl: "https://github.com/shrawanyadkr2/resumebuilder-backend",
     image: "/resumebuilder_dark_screenshot.png",
+    videoUrl: "/resumebuilder_demo.mp4",
     category: "Full Stack",
     status: "Completed",
     badge: "SaaS Resume Builder",
