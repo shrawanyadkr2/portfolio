@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, CheckCircle2, Sparkles, Tag } from 'lucide-react';
+import { X, ExternalLink, Github, CheckCircle2, Sparkles, Tag, Download, Smartphone } from 'lucide-react';
 import { Project } from '../data/portfolioData';
 
 interface ProjectModalProps {
@@ -104,6 +104,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Footer Action Buttons */}
           <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200 dark:border-emerald-500/20">
+            {project.apkUrl && (
+              <a
+                href={project.apkUrl}
+                download="ResumeGenie.apk"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-md shadow-emerald-600/30 transition-all hover:scale-105"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download Android APK (75.7 MB)</span>
+              </a>
+            )}
+
             <a
               href={project.githubUrl}
               target="_blank"

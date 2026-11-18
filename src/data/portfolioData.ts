@@ -8,6 +8,9 @@ export interface Project {
   features: string[];
   githubUrl: string;
   liveUrl?: string;
+  apkUrl?: string;
+  videoUrl?: string;
+  videoUrl2?: string;
   category: 'Full Stack' | 'Mobile App';
   status: 'Completed' | 'In-Progress';
   badge: string;
@@ -82,6 +85,40 @@ export const PERSONAL_INFO = {
 
 export const MOBILE_PROJECTS: Project[] = [
   {
+    id: "resume-genie-app",
+    title: "Resume Genie Mobile App",
+    subtitle: "React Native Mobile App with On-Device PDF Engine & Native Android Sharing",
+    description: "Cross-platform mobile resume builder allowing users to input career history, preview formatted ATS templates in real-time, generate PDF resumes locally, and share via Android native intents.",
+    detailedDescription: "Resume Genie delivers an intuitive mobile resume crafting suite. Developed using React Native and Expo, it integrates Expo Image Picker for headshot cropping, Expo Print for real-time PDF compilation on mobile devices, and Expo Sharing for instant export to WhatsApp, Gmail, or Google Drive. Synchronized with a custom Java & Spring Boot backend with MongoDB persistence.",
+    technologies: [
+      "React Native (0.88)", 
+      "Expo (v58)", 
+      "Expo Print (PDF)", 
+      "Expo Sharing", 
+      "Expo Image Picker", 
+      "Spring Boot (Java Backend)", 
+      "MongoDB", 
+      "Android APK Build"
+    ],
+    features: [
+      "Live screen recording demonstration of real-time mobile resume editing and generation",
+      "Native on-device PDF compilation using Expo Print engine",
+      "One-tap export to Android native share sheet (WhatsApp, Email, Drive)",
+      "Native image gallery and camera integration for profile headshots",
+      "Full integration with custom Java & Spring Boot REST backend",
+      "Direct compiled Android APK binary download available"
+    ],
+    githubUrl: "https://github.com/shrawanyadkr2",
+    apkUrl: "/ResumeGenie.apk",
+    videoUrl: "/resume_app_demo_1.mp4",
+    videoUrl2: "/resume_app_demo_2.mp4",
+    category: "Mobile App",
+    status: "Completed",
+    badge: "Live Video & APK Available",
+    metrics: "75.7 MB APK • Video Demo • On-Device PDF",
+    isMobile: true
+  },
+  {
     id: "coffeeshop-app",
     title: "CoffeeShop Mobile App",
     subtitle: "Premium E-Commerce Mobile Application crafted in React Native & Expo",
@@ -116,34 +153,6 @@ export const MOBILE_PROJECTS: Project[] = [
       { name: "Cart & Checkout", description: "Quantity stepper, discount vouchers, delivery options & order total", tag: "Transaction" },
       { name: "Live Delivery Tracker", description: "Real-time courier route simulation, rider status & contact", tag: "Logistics" }
     ]
-  },
-  {
-    id: "resume-genie-app",
-    title: "Resume Genie Mobile",
-    subtitle: "Cross-Platform Mobile Resume Creator with PDF Export & Native Sharing",
-    description: "React Native mobile client coupled with a Spring Boot Java backend that allows users to draft, preview, and generate professional resumes directly on their smartphones.",
-    detailedDescription: "Designed for job seekers on the go, Resume Genie utilizes Expo Image Picker to crop profile photos, Expo Print for client-side PDF document generation, and Expo Sharing for native Android share sheet integration. It connects to a Spring Boot microservice with MongoDB persistence for synchronized cross-device resume templates.",
-    technologies: [
-      "React Native", 
-      "Expo Print", 
-      "Expo Sharing", 
-      "Expo Image Picker", 
-      "Spring Boot (Java Backend)", 
-      "MongoDB", 
-      "Android Testing"
-    ],
-    features: [
-      "Native mobile camera and gallery integration for profile headshots",
-      "Instant PDF generation on mobile device using Expo Print engine",
-      "One-click sharing via Android native share sheet (WhatsApp, Email, Drive)",
-      "Robust REST API synchronization with custom Spring Boot backend"
-    ],
-    githubUrl: "https://github.com/shrawanyadkr2",
-    category: "Mobile App",
-    status: "Completed",
-    badge: "Native Utility App",
-    metrics: "PDF Engine • Native Share Sheet",
-    isMobile: true
   }
 ];
 
