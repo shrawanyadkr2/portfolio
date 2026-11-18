@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, ArrowUpRight, Sparkles, Smartphone, Code, Terminal, Layers } from 'lucide-react';
+import { Github, ExternalLink, ArrowUpRight, Sparkles, Smartphone, Terminal } from 'lucide-react';
 import { PROJECTS, Project } from '../data/portfolioData';
 import { ProjectModal } from './ProjectModal';
 
@@ -65,80 +65,48 @@ export const Projects: React.FC = () => {
               className="flex flex-col justify-between rounded-3xl bg-white/80 dark:bg-[#0a110d]/90 border border-slate-200/80 dark:border-emerald-500/15 backdrop-blur-xl shadow-xl shadow-slate-900/5 dark:shadow-emerald-950/20 hover:border-emerald-500/40 transition-all duration-300 overflow-hidden group"
             >
               <div>
-                {/* Visual Header Mockup / Real Screenshot */}
-                <div className="relative h-48 bg-gradient-to-br from-slate-900 via-[#07130d] to-emerald-950/80 overflow-hidden border-b border-emerald-500/15">
-                  {project.image ? (
-                    <div className="relative w-full h-full overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                {/* Clean, Full-Bleed Visual Header without any overlapping text or badge covers */}
+                <div className="relative h-52 bg-slate-950 overflow-hidden border-b border-emerald-500/15">
+                  {project.id === 'resume-genie-app' && project.videoUrl ? (
+                    /* Real Screen Recording Video Loop for Resume Genie */
+                    <div className="w-full h-full overflow-hidden bg-black flex items-center justify-center">
+                      <video
+                        src={project.videoUrl}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  ) : project.image ? (
+                    /* Clean Full-Bleed Screenshot for School ERP, ResumeBuilder, CoffeeShop */
+                    <div className="w-full h-full overflow-hidden bg-slate-900">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
-                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
-                        <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-black/60 backdrop-blur-md text-emerald-300 border border-emerald-500/30">
-                          {project.badge}
-                        </span>
-                        <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-black/60 backdrop-blur-md text-slate-300 border border-white/10">
-                          {project.category}
-                        </span>
-                      </div>
-                      <div className="absolute bottom-3 left-3 right-3 z-10">
-                        <div className="text-[10px] text-emerald-400 font-mono font-bold tracking-wider uppercase">
-                          {project.metrics}
-                        </div>
-                        <div className="text-white text-base font-bold font-display truncate">
-                          {project.title}
-                        </div>
-                      </div>
                     </div>
                   ) : (
-                    <div className="p-5 h-full flex flex-col justify-between">
-                      {/* Subtle Grid in thumbnail */}
-                      <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
-                      
-                      {/* Top Bar */}
-                      <div className="flex items-center justify-between relative z-10">
-                        <div className="flex items-center gap-1.5">
-                          <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                          <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                          <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                          <span className="ml-1.5 font-mono text-[10px] text-emerald-400/80">
-                            {project.id}.java
-                          </span>
-                        </div>
-                        <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                          {project.badge}
+                    /* Minimal Clean Gradient Frame if no image */
+                    <div className="w-full h-full p-6 flex flex-col justify-between bg-gradient-to-br from-slate-900 via-[#07130d] to-emerald-950/80">
+                      <div className="flex items-center gap-1.5">
+                        <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                        <span className="ml-1.5 font-mono text-[10px] text-emerald-400/80">
+                          {project.id}.java
                         </span>
                       </div>
-
-                      {/* Center Graphic */}
-                      <div className="relative z-10 flex items-center justify-between">
-                        <div>
-                          <div className="text-emerald-400 text-[10px] font-mono font-bold tracking-widest uppercase mb-0.5">
-                            {project.category}
-                          </div>
-                          <div className="text-white text-xl font-extrabold font-display truncate max-w-[210px]">
-                            {project.title}
-                          </div>
+                      <div className="flex items-center justify-between">
+                        <div className="text-white text-xl font-bold font-display">
+                          {project.title}
                         </div>
-                        <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300 shrink-0">
-                          {project.isMobile ? (
-                            <Smartphone className="w-6 h-6" />
-                          ) : (
-                            <Terminal className="w-6 h-6" />
-                          )}
-                        </div>
+                        <Terminal className="w-7 h-7 text-emerald-400" />
                       </div>
-
-                      {/* Bottom Metrics Chip */}
-                      <div className="relative z-10 flex items-center justify-between text-[10px] text-slate-300 font-mono">
-                        <span className="text-emerald-400/90 font-medium truncate">
-                          {project.metrics}
-                        </span>
-                        <span className="text-slate-400 shrink-0">
-                          ✓ Verified
-                        </span>
+                      <div className="text-[11px] font-mono text-emerald-400">
+                        {project.metrics}
                       </div>
                     </div>
                   )}
@@ -146,6 +114,16 @@ export const Projects: React.FC = () => {
 
                 {/* Content Body */}
                 <div className="p-6">
+                  {/* Category & Badge Pills positioned cleanly in the body */}
+                  <div className="flex items-center gap-2 mb-2.5">
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
+                      {project.badge}
+                    </span>
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-emerald-500/10">
+                      {project.category}
+                    </span>
+                  </div>
+
                   <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">
                     {project.title}
                   </h3>

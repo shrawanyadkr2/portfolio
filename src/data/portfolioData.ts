@@ -145,6 +145,7 @@ export const MOBILE_PROJECTS: Project[] = [
       "Configured EAS Build pipeline for automated Android APK artifact generation"
     ],
     githubUrl: "https://github.com/shrawanyadkr2",
+    image: "/coffeeshop_figma.png",
     category: "Mobile App",
     status: "Completed",
     badge: "Featured Mobile App",
