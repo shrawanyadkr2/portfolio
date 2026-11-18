@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Trophy, Award, Compass, Sparkles, CheckCircle2 } from 'lucide-react';
-import { PERSONAL_INFO, ACHIEVEMENTS_DATA, EDUCATION_DATA } from '../data/portfolioData';
+import { GraduationCap, Trophy, Award, Compass, Sparkles } from 'lucide-react';
+import { PERSONAL_INFO, EDUCATION_DATA } from '../data/portfolioData';
 
 export const About: React.FC = () => {
   return (
@@ -12,13 +12,13 @@ export const About: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono uppercase tracking-wider font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Discover My Background</span>
+            <span>About Me</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white">
-            Driven by Engineering, Passion & Purpose
+            Background & What I Build
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            A look into my academic journey, core technical philosophy, and dedication to building scalable software.
+            A quick look at my college journey, what I work on every day, and how I approach software engineering.
           </p>
         </div>
 
@@ -37,26 +37,26 @@ export const About: React.FC = () => {
               <div className="flex items-center gap-3 text-emerald-600 dark:text-emerald-400 mb-6">
                 <Compass className="w-6 h-6" />
                 <h3 className="text-xl font-bold font-display text-slate-900 dark:text-white">
-                  My Development Journey
+                  A bit about me
                 </h3>
               </div>
 
               <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-base">
                 <p>
-                  I am a <strong className="text-slate-900 dark:text-emerald-300">Computer Science Engineering student</strong> at ITS Engineering College (2023 – 2027) with an <strong className="text-slate-900 dark:text-emerald-300">8.1 CGPA</strong> and the distinction of ranking as the <strong className="text-slate-900 dark:text-emerald-300">6th Academic Topper in B.Tech 1st Year</strong>.
+                  I'm currently in my 2nd year of <strong className="text-slate-900 dark:text-emerald-300">Computer Science & Engineering</strong> at ITS Engineering College, Greater Noida. I hold an <strong className="text-slate-900 dark:text-emerald-300">8.1 CGPA</strong> and ranked <strong className="text-slate-900 dark:text-emerald-300">6th in my batch</strong> during 1st year.
                 </p>
                 <p>
-                  My engineering perspective is rooted in disciplined problem solving. Having solved <strong className="text-slate-900 dark:text-emerald-300">800+ algorithmic problems</strong> across LeetCode, Codeforces, and GeeksforGeeks, and achieving a <strong className="text-slate-900 dark:text-emerald-300">Global Rank 614 out of 30,000+ competitors (Top 2%)</strong> in LeetCode Weekly Contest 479, I write clean, optimized code with a focus on data structures, time complexity, and memory management.
+                  I enjoy solving coding challenges and practicing algorithms. Over the past couple of years, I've solved <strong className="text-slate-900 dark:text-emerald-300">800+ DSA problems</strong> on LeetCode, Codeforces, and GeeksforGeeks. Recently, I placed <strong className="text-slate-900 dark:text-emerald-300">614th globally out of 30,000+ coders (Top 2%)</strong> in LeetCode Weekly Contest 479.
                 </p>
                 <p>
-                  I specialize in architecting full-stack systems with <strong className="text-slate-900 dark:text-emerald-300">Spring Boot, Java, and Spring Security</strong> for secure backend microservices, alongside reactive frontends in <strong className="text-slate-900 dark:text-emerald-300">React.js & Tailwind CSS</strong> and cross-platform mobile apps in <strong className="text-slate-900 dark:text-emerald-300">React Native & Expo</strong>.
+                  On the development side, I focus on full-stack web and mobile apps. My favorite stack is <strong className="text-slate-900 dark:text-emerald-300">Java + Spring Boot</strong> on the backend with Spring Security and PostgreSQL or MongoDB, coupled with <strong className="text-slate-900 dark:text-emerald-300">React & Tailwind</strong> for web apps and <strong className="text-slate-900 dark:text-emerald-300">React Native</strong> for Android apps.
                 </p>
               </div>
 
               {/* Verified Highlights List */}
               <div className="mt-8 pt-6 border-t border-slate-200 dark:border-emerald-500/15">
                 <h4 className="text-sm font-semibold uppercase font-mono tracking-wider text-slate-900 dark:text-emerald-300 mb-4">
-                  Verified Resume Highlights:
+                  Key Points:
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {PERSONAL_INFO.aboutHighlights.map((highlight, index) => (
@@ -76,12 +76,12 @@ export const About: React.FC = () => {
             <div className="mt-8 p-4 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-transparent border border-emerald-500/20 flex items-center gap-3">
               <Trophy className="w-5 h-5 text-emerald-500 shrink-0" />
               <div className="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                <strong className="text-emerald-600 dark:text-emerald-400">Competitive Standout:</strong> LeetCode Weekly Contest 479 Global Rank 614 (Top 2% / 30,000+).
+                <strong className="text-emerald-600 dark:text-emerald-400">Recent Milestone:</strong> LeetCode Weekly Contest 479 — Global Rank 614 out of 30,000+ competitors (Top 2%).
               </div>
             </div>
           </motion.div>
 
-          {/* Right Column: Verified Stats & Academic Credentials */}
+          {/* Right Column: Stats & Academic Credentials */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -113,7 +113,7 @@ export const About: React.FC = () => {
             <div className="p-6 rounded-3xl bg-white/70 dark:bg-[#0a110d]/80 border border-slate-200/80 dark:border-emerald-500/15 backdrop-blur-xl shadow-lg shadow-slate-900/5 dark:shadow-emerald-950/20 flex flex-col justify-center">
               <div className="flex items-center gap-2.5 text-emerald-600 dark:text-emerald-400 mb-4 font-display font-bold text-lg">
                 <GraduationCap className="w-5 h-5" />
-                <span>Academic Foundation</span>
+                <span>Education</span>
               </div>
 
               {/* B.Tech */}
@@ -123,14 +123,14 @@ export const About: React.FC = () => {
                     2023 – 2027 • B.Tech (CSE)
                   </span>
                   <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-300">
-                    CGPA: 8.1
+                    8.1 CGPA
                   </span>
                 </div>
                 <div className="font-bold text-slate-900 dark:text-white text-sm sm:text-base mt-1">
                   ITS Engineering College
                 </div>
                 <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                  Greater Noida, India • Ranked 6th Academic Topper (1st Year)
+                  Greater Noida, India • 6th Academic Topper (1st Year)
                 </div>
               </div>
 
@@ -141,7 +141,7 @@ export const About: React.FC = () => {
                     2021 – 2023 • Intermediate (PCMC)
                   </span>
                   <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300">
-                    88.2% Distinction
+                    88.2%
                   </span>
                 </div>
                 <div className="font-bold text-slate-900 dark:text-white text-sm sm:text-base mt-1">

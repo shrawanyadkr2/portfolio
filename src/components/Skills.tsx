@@ -9,6 +9,7 @@ import {
   Cpu, 
   Sparkles, 
   CheckCircle,
+  Smartphone,
   Binary
 } from 'lucide-react';
 import { SKILL_CATEGORIES } from '../data/portfolioData';
@@ -17,13 +18,15 @@ const getCategoryIcon = (title: string) => {
   switch (title) {
     case 'Programming Languages':
       return <Code2 className="w-5 h-5 text-emerald-500" />;
-    case 'Frontend Engineering':
+    case 'Frontend Development':
       return <Layout className="w-5 h-5 text-teal-500" />;
-    case 'Backend & Systems':
+    case 'Backend & APIs':
       return <Server className="w-5 h-5 text-emerald-500" />;
+    case 'Mobile Development':
+      return <Smartphone className="w-5 h-5 text-teal-400" />;
     case 'Databases & Storage':
       return <Database className="w-5 h-5 text-teal-400" />;
-    case 'Developer Tools & Cloud':
+    case 'Tools & Integrations':
       return <Wrench className="w-5 h-5 text-emerald-400" />;
     case 'Computer Science Core':
       return <Cpu className="w-5 h-5 text-emerald-500" />;
@@ -49,13 +52,13 @@ export const Skills: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono uppercase tracking-wider font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Technical Capabilities</span>
+            <span>Tech Stack</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white">
-            Skills & Technical Expertise
+            Skills & Tools
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            A comprehensive overview of programming languages, frameworks, developer tools, and computer science foundations from my real-world projects and coursework.
+            Languages, frameworks, databases, and dev tools I use in my projects and daily development.
           </p>
         </div>
 
@@ -129,8 +132,8 @@ export const Skills: React.FC = () => {
 
               {/* Bottom Subtle Bar */}
               <div className="mt-6 pt-4 border-t border-slate-100 dark:border-emerald-500/10 flex items-center justify-between text-[11px] font-mono text-slate-400 dark:text-emerald-400/70">
-                <span>Verified from Projects & Experience</span>
-                <span>{category.skills.length} competencies</span>
+                <span>Used in projects & coursework</span>
+                <span>{category.skills.length} skills</span>
               </div>
             </motion.div>
           ))}

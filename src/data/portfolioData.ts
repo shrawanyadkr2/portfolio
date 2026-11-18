@@ -60,17 +60,17 @@ export const PERSONAL_INFO = {
   email: "shrawan29yadav@gmail.com",
   phone: "+91-6299307414",
   location: "Greater Noida, India",
-  status: "Available for Internships & Software Engineering Roles",
-  availabilityText: "Ready for immediate hiring & innovative development teams",
-  heroSubtitle: "Building Scalable Web Systems & Cross-Platform Mobile Apps.",
-  heroSummary: "Computer Science Engineering student at ITS Engineering College specializing in Spring Boot & Java backends, modern React & Vite frontends, and React Native mobile applications.",
-  aboutIntro: "I am a dedicated Computer Science Engineering student and Full Stack Software Developer specializing in Java, Spring Boot, React.js, and React Native. With a proven competitive track record of solving 800+ DSA problems and securing Global Rank 614 in LeetCode Weekly Contest 479 (Top 2%), I combine rigorous algorithmic discipline with robust software architecture.",
+  status: "Open for Software Engineering Internships & Roles",
+  availabilityText: "Ready to join engineering teams and start contributing",
+  heroSubtitle: "Building full-stack web applications and cross-platform mobile apps.",
+  heroSummary: "Computer Science student at ITS Engineering College. I spend most of my time building backends with Java & Spring Boot, crafting frontends with React, creating mobile apps in React Native, and practicing DSA on LeetCode.",
+  aboutIntro: "Hey, I'm Shrawan! I am a Computer Science Engineering student (2023–2027) with an 8.1 CGPA. I enjoy building things that live on the internet—from database models and secure REST APIs to clean, responsive interfaces. I also solve algorithmic problems consistently, having solved 800+ problems across LeetCode, Codeforces, and GeeksforGeeks.",
   aboutHighlights: [
-    "Solved 800+ Data Structures & Algorithms problems across LeetCode, Codeforces, and GeeksforGeeks.",
-    "Achieved Global Rank 614 out of 30,000+ participants (Top 2%) in LeetCode Weekly Contest 479.",
-    "Ranked 6th Academic Topper in B.Tech 1st Year at ITS Engineering College (CGPA: 8.1).",
-    "Engineered production full-stack systems with Spring Boot, Spring Security, React, Docker, and PostgreSQL/MongoDB.",
-    "Built and published cross-platform mobile products using React Native and Expo."
+    "Solved 800+ DSA problems across LeetCode, Codeforces, and GeeksforGeeks.",
+    "Ranked 614 globally out of 30,000+ competitors (Top 2%) in LeetCode Contest 479.",
+    "Finished 6th in my batch during 1st year at ITS Engineering College (8.1 CGPA).",
+    "Built real full-stack systems with Spring Boot, Spring Security, React, Docker, and PostgreSQL/MongoDB.",
+    "Developed and published mobile apps using React Native, Expo, and EAS Android builds."
   ],
   socials: {
     linkedin: "https://www.linkedin.com/in/shrawan-kr-yadav-009008281/",
@@ -80,9 +80,9 @@ export const PERSONAL_INFO = {
   },
   stats: [
     { label: "DSA Problems Solved", value: "800+", subtext: "LeetCode, Codeforces, GFG" },
-    { label: "LeetCode Contest 479", value: "Rank 614", subtext: "Top 2% / 30,000+ worldwide" },
-    { label: "Academic Topper", value: "6th Rank", subtext: "B.Tech 1st Year (ITS Engg)" },
-    { label: "B.Tech CGPA", value: "8.1", subtext: "ITS Engineering College (2023-27)" }
+    { label: "LeetCode Contest 479", value: "Rank 614", subtext: "Top 2% out of 30,000+ coders" },
+    { label: "1st Year Rank", value: "6th Topper", subtext: "ITS Engineering College" },
+    { label: "B.Tech CGPA", value: "8.1", subtext: "CSE Batch 2023 – 2027" }
   ]
 };
 
@@ -90,26 +90,27 @@ export const MOBILE_PROJECTS: Project[] = [
   {
     id: "resume-genie-app",
     title: "Resume Genie Mobile App",
-    subtitle: "React Native Mobile App with On-Device PDF Engine & Native Android Sharing",
-    description: "Cross-platform mobile resume builder allowing users to input career history, preview formatted ATS templates in real-time, generate PDF resumes locally, and share via Android native intents.",
-    detailedDescription: "Resume Genie delivers an intuitive mobile resume crafting suite. Developed using React Native and Expo, it integrates Expo Image Picker for headshot cropping, Expo Print for real-time PDF compilation on mobile devices, and Expo Sharing for instant export to WhatsApp, Gmail, or Google Drive. Synchronized with a custom Java & Spring Boot backend with MongoDB persistence.",
+    subtitle: "React Native app that lets you build and export PDF resumes right from your phone",
+    description: "A mobile resume builder where you can type your info, choose a template, and export a clean PDF or send it straight to WhatsApp/Email.",
+    detailedDescription: "I built Resume Genie so anyone can build a professional resume directly from their phone without needing a computer. The frontend is built with React Native and Expo, using Expo Print to generate the PDF file on the device and Expo Sharing to open the native Android share menu. It also connects to a Spring Boot & MongoDB backend to sync user data.",
     technologies: [
-      "React Native (0.88)", 
-      "Expo (v58)", 
+      "React Native", 
+      "Expo", 
       "Expo Print (PDF)", 
       "Expo Sharing", 
       "Expo Image Picker", 
-      "Spring Boot (Java Backend)", 
+      "Spring Boot", 
+      "Java", 
       "MongoDB", 
-      "Android APK Build"
+      "Android APK"
     ],
     features: [
-      "Live screen recording demonstration of real-time mobile resume editing and generation",
-      "Native on-device PDF compilation using Expo Print engine",
-      "One-tap export to Android native share sheet (WhatsApp, Email, Drive)",
-      "Native image gallery and camera integration for profile headshots",
-      "Full integration with custom Java & Spring Boot REST backend",
-      "Direct compiled Android APK binary download available"
+      "Actual screen recording above shows the app generating a resume in real time",
+      "Compiles ATS-friendly PDF documents directly on the phone using Expo Print",
+      "One-tap sharing to WhatsApp, Gmail, or Google Drive via Android share menu",
+      "Camera and gallery access to add profile pictures using Expo Image Picker",
+      "REST backend built with Java, Spring Boot, and MongoDB",
+      "Full compiled Android APK (75.7 MB) ready to install and test"
     ],
     githubUrl: "https://github.com/shrawanyadkr2/ResumeBuilderApp",
     apkUrl: "/ResumeGenie.apk",
@@ -117,45 +118,45 @@ export const MOBILE_PROJECTS: Project[] = [
     videoUrl2: "/resume_app_demo_2.mp4",
     category: "Mobile App",
     status: "Completed",
-    badge: "Live Video & APK Available",
+    badge: "Android APK + Video Demo",
     metrics: "75.7 MB APK • Video Demo • On-Device PDF",
     isMobile: true
   },
   {
     id: "coffeeshop-app",
     title: "CoffeeShop Mobile App",
-    subtitle: "Premium E-Commerce Mobile Application crafted in React Native & Expo",
-    description: "Production-grade cross-platform mobile e-commerce application developed with React Native from Figma designs featuring 8 rich screens, tactile spring animations, and EAS Android APK generation.",
-    detailedDescription: "Crafted with React Native 0.88 and Expo 58, this mobile application replicates a pixel-perfect Figma coffee commerce workflow. Features tactile micro-interactions on product cards, animated screen transitions, dark/light theme system, responsive phone and tablet layouts, and a dedicated REST API service layer with JWT header injection. Tested with Metro bundler and configured for Android APK generation using EAS Build.",
+    subtitle: "Coffee ordering mobile app made in React Native based on a Figma design",
+    description: "An 8-screen mobile e-commerce app with smooth card animations, dark & light mode, and order/delivery tracking.",
+    detailedDescription: "I turned a complete Figma design into a functioning React Native app. It features 8 full screens (Onboarding, Home, Details, Cart, Checkout, Order Tracking, Favorites, and Profile), smooth animations when tapping buttons and cards, an active search with category filters, and an EAS preview configuration to build Android APKs.",
     technologies: [
-      "React Native (0.88)", 
-      "Expo (v58)", 
+      "React Native", 
+      "Expo", 
       "JavaScript / TypeScript", 
       "Safe Area Context", 
-      "EAS Build (Android APK)", 
+      "EAS Build", 
       "REST API Client", 
-      "Figma Fidelity",
+      "Figma UI",
       "Metro Bundler"
     ],
     features: [
-      "8 full application screens: Onboarding, Home, Product Details, Cart, Order, Live Delivery Tracker, Favorites, and Profile",
-      "Smooth slide-fade transition engine and tactile spring scaling on user touch interactions",
-      "Full dark & light theme system with instant toggle and persistent theme preference",
-      "Dynamic product category filtering, real-time search, and coffee bean customizer (size selection & add-ons)",
-      "Configured EAS Build pipeline for automated Android APK artifact generation"
+      "8 full screens: Onboarding, Home, Product Details, Cart, Order, Live Delivery Tracker, Favorites, and Profile",
+      "Smooth slide transitions and spring tap animations on cards and buttons",
+      "Built-in light and dark theme toggle that saves your preference",
+      "Category tabs (Cappuccino, Latte, Espresso), search bar, and size selector (S/M/L)",
+      "Set up with EAS Build scripts for generating standalone Android APKs"
     ],
     githubUrl: "https://github.com/shrawanyadkr2",
     image: "/coffeeshop_figma.png",
     category: "Mobile App",
     status: "Completed",
-    badge: "Featured Mobile App",
-    metrics: "8 Mobile Screens • EAS APK Ready",
+    badge: "8 Mobile Screens",
+    metrics: "8 Mobile Screens • EAS Ready",
     isMobile: true,
     mobileScreens: [
-      { name: "Home & Catalog", description: "Search, promo banner, category filters & 2-column coffee grid", tag: "Discovery" },
-      { name: "Product Detail", description: "Bean origin details, size selector (S/M/L) & pricing bar", tag: "E-Commerce" },
-      { name: "Cart & Checkout", description: "Quantity stepper, discount vouchers, delivery options & order total", tag: "Transaction" },
-      { name: "Live Delivery Tracker", description: "Real-time courier route simulation, rider status & contact", tag: "Logistics" }
+      { name: "Home & Catalog", description: "Search, promo banner, category tabs & coffee card grid", tag: "Home" },
+      { name: "Product Detail", description: "Description, size selector (S/M/L) and bottom price bar", tag: "Details" },
+      { name: "Cart & Checkout", description: "Quantity buttons, discount voucher, and order total", tag: "Cart" },
+      { name: "Live Delivery Tracker", description: "Simulated courier GPS route and delivery status", tag: "Tracking" }
     ]
   }
 ];
@@ -164,9 +165,9 @@ export const PROJECTS: Project[] = [
   {
     id: "advance-school-erp",
     title: "Advance School ERP",
-    subtitle: "Enterprise School Management Web App with Spring Security & Online Payments",
-    description: "A comprehensive school management platform built to manage student admissions, attendance, online fee payments, timetables, and report cards.",
-    detailedDescription: "Advance School ERP streamlines academic institution operations. The backend is built using Spring Boot & Java with Spring Security & JWT for role-based permissions (Admin, Teacher, Student). MongoDB persists student records, attendance logs, and fee transactions without complex SQL joins. The React & Tailwind frontend uses AuthContext for seamless session persistence across browser refreshes, integrated with Razorpay for online fees, Brevo for account verification, Cloudinary for media uploads, and containerized with Docker for Render deployment.",
+    subtitle: "Full-stack school management web application with role permissions and fee payments",
+    description: "A complete web portal for schools to handle student admissions, attendance tracking, fee collections via Razorpay, timetables, and report cards.",
+    detailedDescription: "I developed this ERP system to help schools manage daily operations digitally. The backend is written in Java with Spring Boot, using Spring Security and JWT to handle authentication and role permissions for Admins, Teachers, and Students. I chose MongoDB to keep data structures flexible for class schedules, attendance logs, and fee history. The React frontend uses AuthContext so users stay logged in across refreshes. I also integrated Razorpay for fees, Brevo for email confirmations, Cloudinary for picture uploads, and packaged the backend with Docker for Render.",
     technologies: [
       "React.js", 
       "Spring Boot", 
@@ -182,12 +183,12 @@ export const PROJECTS: Project[] = [
       "Render"
     ],
     features: [
-      "Engineered backend using Spring Boot & Java with Spring Security & JWT for role-based permissions (Admin, Teacher, Student)",
-      "MongoDB document architecture storing student profiles, class timetables, attendance logs, and fee records",
-      "Interactive frontend built with React & Tailwind CSS using AuthContext to preserve user sessions across tabs",
-      "Integrated Razorpay gateway for seamless online fee processing",
-      "Automated verification emails via Brevo and Cloudinary profile photo uploads",
-      "Packaged backend with Dockerfile and deployed to Render"
+      "Role-based authentication (Admin, Teacher, Student) using Spring Security & JWT",
+      "MongoDB database structure storing student records, timetables, and attendance logs cleanly",
+      "React & Tailwind frontend with AuthContext session handling across browser tabs",
+      "Razorpay integration to process online student fee payments directly",
+      "Automated verification emails using Brevo and profile photo uploads via Cloudinary",
+      "Packaged into a Docker container and deployed live on Render"
     ],
     githubUrl: "https://github.com/shrawanyadkr2/schoolmanagement-frontend",
     githubFrontendUrl: "https://github.com/shrawanyadkr2/schoolmanagement-frontend",
@@ -195,15 +196,15 @@ export const PROJECTS: Project[] = [
     image: "/school_erp_screenshot.png",
     category: "Full Stack",
     status: "Completed",
-    badge: "Enterprise Web App",
-    metrics: "Dockerized • Razorpay • Spring Security"
+    badge: "Full-Stack ERP",
+    metrics: "Docker • Razorpay • Spring Security"
   },
   {
     id: "resumebuilder-apps",
     title: "ResumeBuilder Apps (sky.devX SaaS)",
-    subtitle: "Full-Stack SaaS Platform for ATS-Friendly Professional Resumes",
-    description: "A full-stack SaaS platform empowering users to construct ATS-friendly professional resumes with real-time live preview.",
-    detailedDescription: "ResumeBuilder Apps provides a complete SaaS resume generation workflow. The Java & Spring Boot backend enforces JWT and Spring Security authentication, backed by MongoDB for modular resume section storage (experience, education, skills, tokens). The React & Tailwind frontend incorporates AuthContext for persistent sessions, Brevo API for email verification, and Cloudinary for photo uploads, deployed across Render (backend) and Vercel (frontend).",
+    subtitle: "Web app to build clean, ATS-friendly resumes with real-time live preview",
+    description: "A full-stack resume builder where you can fill in your experience, projects, and education, pick templates, and download clean PDFs.",
+    detailedDescription: "I created this project to make it easy for students and developers to create ATS-friendly resumes without struggling with Word formatting. The backend runs on Java and Spring Boot with Spring Security for JWT logins and token handling. MongoDB stores user accounts and resume sections. The React frontend provides an instant live preview as you type, with Brevo handling email verification and Cloudinary storing profile pictures. Frontend is on Vercel and backend is on Render.",
     technologies: [
       "React.js", 
       "Spring Boot", 
@@ -218,12 +219,12 @@ export const PROJECTS: Project[] = [
       "Render"
     ],
     features: [
-      "Full-stack SaaS architecture generating ATS-compliant resumes with real-time live preview",
-      "Spring Boot & Java backend featuring Spring Security & JWT authentication",
-      "MongoDB document model storing user profiles, customizable resume sections, and tokens",
-      "React & Tailwind CSS frontend with AuthContext session persistence",
-      "Brevo API integration for verification emails and Cloudinary for headshot hosting",
-      "Production deployment on Vercel (frontend) and Render (backend)"
+      "Instant side-by-side preview that updates live as you type your resume details",
+      "Secure user login and token authentication using Spring Security & JWT",
+      "Modular MongoDB data model saving work history, education, skills, and links",
+      "React & Tailwind CSS frontend with AuthContext for persistent sessions",
+      "Brevo email verification on signup and Cloudinary for uploading headshots",
+      "Live deployment split between Vercel (frontend) and Render (backend)"
     ],
     githubUrl: "https://github.com/shrawanyadkr2/resumebuilder-frontend",
     githubFrontendUrl: "https://github.com/shrawanyadkr2/resumebuilder-frontend",
@@ -231,15 +232,15 @@ export const PROJECTS: Project[] = [
     image: "/resumebuilder_dark_screenshot.png",
     category: "Full Stack",
     status: "Completed",
-    badge: "SaaS Resume Engine",
+    badge: "SaaS Resume Builder",
     metrics: "ATS Live Preview • Vercel + Render"
   },
   {
     id: "shortiex-apps",
     title: "shortieX Apps",
-    subtitle: "Scalable URL Shortener & Click Analytics Platform",
-    description: "High-throughput URL shortening service featuring Base62 encoding, collision retries, and comprehensive click analytics.",
-    detailedDescription: "shortieX is an enterprise-grade URL shortening and analytics platform. Its Spring Boot & Java backend leverages Spring Security (JWT) and PostgreSQL (NeonDB) to record granular click metrics (device, browser, OS, IP address). Uses a custom Base62 short code generator with collision retries and reserved word protection. The React + Vite frontend uses TanStack Query for efficient API caching and Recharts for analytics dashboards, with Swagger UI documentation and Dockerized Render/Vercel deployment.",
+    subtitle: "Fast URL shortener with Base62 encoding and click analytics charts",
+    description: "A URL shortening tool that turns long links into short URLs, with a dashboard showing clicks by device, browser, and location.",
+    detailedDescription: "shortieX was built to handle high link volume and give useful analytics. The backend uses Spring Boot, Java, and Spring Security (JWT), connected to PostgreSQL on NeonDB. I wrote a custom Base62 short-code generator with retry logic for collisions and checks against reserved words. The frontend is built with React and Vite, using TanStack Query for fast caching and Recharts for click breakdown charts.",
     technologies: [
       "React.js", 
       "Vite", 
@@ -255,17 +256,17 @@ export const PROJECTS: Project[] = [
       "Tailwind CSS"
     ],
     features: [
-      "Spring Boot, Java, and Spring Security (JWT) backend for authenticated URL management",
-      "PostgreSQL (Neon DB) tracking granular analytics: device type, browser, OS, and client IP",
-      "Base62 short code generator with collision retries and reserved word checks for custom aliases",
-      "React & Vite frontend with TanStack Query caching and interactive Recharts data visualizations",
-      "Brevo SMTP email verification, password reset flows, and Swagger UI API documentation",
-      "Containerized with Docker for Render backend and Vercel frontend"
+      "Custom Base62 encoding engine with collision retries and reserved-keyword checks",
+      "PostgreSQL on NeonDB storing links and click data (browser, device, OS, IP)",
+      "Interactive charts built with Recharts showing daily click trends and referrer stats",
+      "TanStack Query on the frontend for smooth caching and fewer redundant API calls",
+      "Documented all REST endpoints cleanly using Swagger UI",
+      "Dockerized backend deployed on Render and frontend deployed on Vercel"
     ],
     githubUrl: "https://github.com/shrawanyadkr2",
     category: "Full Stack",
     status: "Completed",
-    badge: "High-Throughput Analytics",
+    badge: "URL Shortener & Analytics",
     metrics: "Base62 Engine • NeonDB • Recharts"
   },
   ...MOBILE_PROJECTS
@@ -274,77 +275,77 @@ export const PROJECTS: Project[] = [
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: "Computer Science Core",
-    description: "Core academic and engineering fundamentals",
+    description: "Core subjects from my coursework and regular practice",
     skills: [
       { name: "Data Structures & Algorithms", level: "800+ Solved", featured: true },
       { name: "Operating Systems", level: "Processes & Memory", featured: true },
-      { name: "DBMS", level: "Relational & NoSQL", featured: true },
+      { name: "DBMS", level: "SQL & NoSQL", featured: true },
       { name: "Computer Networks", level: "Protocols & TCP/IP", featured: false },
       { name: "OOPs", level: "Design Principles", featured: true }
     ]
   },
   {
     title: "Programming Languages",
-    description: "Languages used across full-stack and algorithmic problem solving",
+    description: "Languages I write code in regularly",
     skills: [
-      { name: "Java", level: "Advanced & Spring Boot", featured: true },
-      { name: "JavaScript", level: "Advanced ES6+", featured: true },
-      { name: "C++", level: "DSA & Competitive", featured: true },
+      { name: "Java", level: "Daily / Spring Boot", featured: true },
+      { name: "JavaScript", level: "ES6+ / React", featured: true },
+      { name: "C++", level: "DSA & LeetCode", featured: true },
       { name: "C", level: "Foundational", featured: false },
       { name: "HTML5", level: "Semantic Markup", featured: false }
     ]
   },
   {
-    title: "Backend & Frameworks",
-    description: "Server architecture, enterprise APIs, and security",
+    title: "Backend & APIs",
+    description: "Frameworks and libraries I use to build server APIs",
     skills: [
-      { name: "Spring Boot", level: "Enterprise Microservices", featured: true },
-      { name: "Spring Security", level: "RBAC & Authorization", featured: true },
-      { name: "JWT Authentication", level: "Stateless Auth", featured: true },
+      { name: "Spring Boot", level: "REST APIs & Services", featured: true },
+      { name: "Spring Security", level: "Auth & Roles", featured: true },
+      { name: "JWT", level: "Token Authentication", featured: true },
       { name: "REST APIs", level: "Design & Swagger UI", featured: true },
-      { name: "Docker", level: "Containerization", featured: true }
+      { name: "Docker", level: "Container Packaging", featured: true }
     ]
   },
   {
-    title: "Frontend Engineering",
-    description: "Client application development and state management",
+    title: "Frontend Development",
+    description: "Tools I use to build interactive user interfaces",
     skills: [
-      { name: "React.js", level: "Components & Hooks", featured: true },
-      { name: "Tailwind CSS", level: "Responsive Styling", featured: true },
-      { name: "TanStack Query", level: "Async State & Caching", featured: true },
-      { name: "Recharts", level: "Data Visualization", featured: false },
-      { name: "Material UI (MUI)", level: "Component Library", featured: false },
+      { name: "React.js", level: "Hooks & Context", featured: true },
+      { name: "Tailwind CSS", level: "Responsive Layouts", featured: true },
+      { name: "TanStack Query", level: "Data Fetching & Caching", featured: true },
+      { name: "Recharts", level: "Charts & Visuals", featured: false },
+      { name: "Material UI (MUI)", level: "Components", featured: false },
       { name: "AOS", level: "Scroll Animations", featured: false }
     ]
   },
   {
-    title: "Mobile Development (React Native & Cross-Platform)",
-    description: "Cross-platform smartphone engineering for Android and iOS",
+    title: "Mobile Development",
+    description: "Building cross-platform apps for phones",
     skills: [
-      { name: "React Native (0.88+)", level: "App Architecture", featured: true },
-      { name: "Expo (v58)", level: "Native APIs & Modules", featured: true },
-      { name: "EAS Build", level: "Android APK Generation", featured: true },
-      { name: "Mobile UI & Safe Area", level: "Phone & Tablet Layouts", featured: true }
+      { name: "React Native (0.88+)", level: "Mobile App Logic", featured: true },
+      { name: "Expo (v58)", level: "Modules & APIs", featured: true },
+      { name: "EAS Build", level: "Android APKs", featured: true },
+      { name: "Mobile UI", level: "Responsive Screens", featured: true }
     ]
   },
   {
-    title: "Databases & Cloud Storage",
-    description: "Relational, document, and cloud database persistence",
+    title: "Databases & Storage",
+    description: "Where my apps store and query data",
     skills: [
-      { name: "PostgreSQL (NeonDB)", level: "Cloud Relational DB", featured: true },
+      { name: "PostgreSQL (NeonDB)", level: "Relational Cloud DB", featured: true },
       { name: "MongoDB", level: "Document Storage", featured: true },
-      { name: "MySQL", level: "Relational Modeling", featured: true },
-      { name: "Cloudinary", level: "Cloud Media Storage", featured: false }
+      { name: "MySQL", level: "Relational Queries", featured: true },
+      { name: "Cloudinary", level: "Image Hosting", featured: false }
     ]
   },
   {
-    title: "Developer Tools & Services",
-    description: "Development environments, version control, and cloud services",
+    title: "Tools & Integrations",
+    description: "Services and dev tools I use in my workflow",
     skills: [
-      { name: "VS Code", level: "Primary IDE", featured: false },
+      { name: "VS Code", level: "Code Editor", featured: false },
       { name: "Git & GitHub", level: "Version Control", featured: true },
       { name: "Razorpay", level: "Payment Gateway", featured: true },
-      { name: "Brevo SMTP", level: "Email & Verification", featured: true }
+      { name: "Brevo SMTP", level: "Transactional Emails", featured: true }
     ]
   }
 ];
@@ -358,9 +359,9 @@ export const EDUCATION_DATA: EducationItem[] = [
     grade: "8.1 CGPA",
     gradeType: "CGPA",
     highlights: [
-      "Ranked 6th Academic Topper in B.Tech 1st Year at ITS Engineering College.",
-      "Maintained strong 8.1 CGPA across core Computer Science curriculum.",
-      "Key Coursework: Data Structures & Algorithms, Operating Systems, DBMS, Computer Networks, OOPs."
+      "Ranked 6th in my batch during B.Tech 1st Year at ITS Engineering College.",
+      "Maintained an 8.1 CGPA across Computer Science subjects.",
+      "Key Courses: Data Structures & Algorithms, Operating Systems, DBMS, Computer Networks, OOPs."
     ]
   },
   {
@@ -371,8 +372,8 @@ export const EDUCATION_DATA: EducationItem[] = [
     grade: "88.2%",
     gradeType: "Percentage",
     highlights: [
-      "Completed Higher Secondary Intermediate with 88.2% distinction.",
-      "Specialization in Physics, Chemistry, Mathematics, and Computer Science (PCMC)."
+      "Completed 12th Intermediate with 88.2% marks.",
+      "Subjects: Physics, Chemistry, Mathematics, and Computer Science."
     ]
   }
 ];
@@ -381,20 +382,20 @@ export const ACHIEVEMENTS_DATA: AchievementItem[] = [
   {
     title: "800+ DSA Problems Solved",
     metric: "800+ Solved",
-    description: "Solved 800+ Data Structures and Algorithms problems across LeetCode, Codeforces, and GeeksforGeeks, strengthening problem-solving and analytical skills.",
+    description: "Solved 800+ algorithmic problems across LeetCode, Codeforces, and GeeksforGeeks, focusing on graph algorithms, dynamic programming, and data structures.",
     tag: "Problem Solving"
   },
   {
     title: "LeetCode Weekly Contest 479",
     metric: "Global Rank 614",
-    description: "Achieved Global Rank 614 out of 30,000+ participants worldwide (Top 2% Globally) in LeetCode Weekly Contest 479.",
-    tag: "Competitive Programming"
+    description: "Placed 614th out of 30,000+ coders globally (Top 2%) in LeetCode Weekly Contest 479.",
+    tag: "Contest Ranking"
   },
   {
     title: "6th Academic Topper (B.Tech 1st Year)",
-    metric: "Rank 6th Topper",
-    description: "Ranked 6th Academic Topper in B.Tech 1st Year at ITS Engineering College with an 8.1 CGPA.",
-    tag: "Academic Excellence"
+    metric: "6th Batch Rank",
+    description: "Ranked 6th in the entire 1st year engineering batch at ITS Engineering College with an 8.1 CGPA.",
+    tag: "Academics"
   }
 ];
 
@@ -403,18 +404,18 @@ export const CODING_PROFILES = [
     platform: "LeetCode",
     username: "sk8757",
     url: "https://leetcode.com/u/sk8757/",
-    tagline: "Algorithmic Mastery & Global Contest Ranking",
-    highlight: "Global Rank 614 in Weekly Contest 479 (Top 2% / 30,000+). Consistent problem solver across Arrays, DP, Graphs, and Trees.",
+    tagline: "800+ Problems Solved & Top 2% Contest Rank",
+    highlight: "Rank 614 in Weekly Contest 479. Regular practice in C++, Java, and Python on arrays, dynamic programming, trees, and graphs.",
     badgeColor: "from-amber-500/20 to-emerald-500/20 text-amber-500",
-    metrics: "Part of 800+ solved across platforms"
+    metrics: "800+ solved on LeetCode, Codeforces, GFG"
   },
   {
     platform: "GitHub",
     username: "shrawanyadkr2",
     url: "https://github.com/shrawanyadkr2",
-    tagline: "Full-Stack Enterprise & Mobile Codebases",
-    highlight: "Production-grade Spring Boot & Java backends, React applications, and React Native mobile apps with Docker & CI/CD.",
+    tagline: "Real Codebases & Open Repositories",
+    highlight: "Spring Boot backends, React web frontends, and React Native mobile apps with full source code available.",
     badgeColor: "from-emerald-500/20 to-teal-500/20 text-emerald-400",
-    metrics: "Spring Boot • React • React Native"
+    metrics: "Active repositories"
   }
 ];

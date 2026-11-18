@@ -68,13 +68,13 @@ export const MobileShowcase: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono uppercase tracking-wider font-semibold mb-3">
             <Smartphone className="w-3.5 h-3.5" />
-            <span>Cross-Platform Engineering</span>
+            <span>Mobile Development</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white">
-            React Native & Mobile Products
+            Mobile Apps I've Built
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            Real mobile applications developed with React Native and Expo, featuring hardware API integrations, on-device PDF compilation, and direct Android APK builds.
+            Cross-platform mobile apps built with React Native and Expo. You can watch the real app in action below and test the compiled Android APK directly.
           </p>
         </div>
 

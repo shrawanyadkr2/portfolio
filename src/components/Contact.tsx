@@ -90,13 +90,13 @@ export const Contact: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono uppercase tracking-wider font-semibold mb-3">
             <MessageSquare className="w-3.5 h-3.5" />
-            <span>Get In Touch</span>
+            <span>Contact</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white uppercase">
-            LET'S BUILD SOMETHING AMAZING TOGETHER.
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white">
+            Let's Connect
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            Have an opportunity, an idea, or a project in mind? Let's connect and create something meaningful.
+            If you have an internship opportunity, want to collaborate on a project, or just want to chat about tech, feel free to send me a message.
           </p>
         </div>
 
@@ -112,10 +112,10 @@ export const Contact: React.FC = () => {
           >
             <div>
               <h3 className="text-xl font-bold font-display text-slate-900 dark:text-white mb-2">
-                Contact Information
+                Contact Details
               </h3>
               <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-                I am actively seeking software engineering internships, developer opportunities, and collaborative challenges. Feel free to reach out directly.
+                I'm actively looking for software engineering internships and developer roles. You can email me directly or reach out on LinkedIn.
               </p>
 
               {/* Direct Info Items */}

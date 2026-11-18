@@ -36,13 +36,13 @@ export const CodingProfiles: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/20 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono uppercase tracking-wider font-semibold mb-3">
             <Flame className="w-3.5 h-3.5" />
-            <span>Problem Solving Journey</span>
+            <span>Competitive Programming</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white">
-            Coding Profiles & Algorithmic Track
+            Problem Solving & Profiles
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            A verified track record of 800+ solved data structures and algorithmic challenges, strengthening clean architectural reasoning, time-space efficiency, and engineering consistency.
+            I solve algorithmic problems on LeetCode and Codeforces regularly to sharpen my problem-solving skills and write efficient, optimal code.
           </p>
         </div>
 
