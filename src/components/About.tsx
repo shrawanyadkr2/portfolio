@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { GraduationCap, Award, Compass, Sparkles, BookOpen, Layers } from 'lucide-react';
-import { PERSONAL_INFO } from '../data/portfolioData';
+import { GraduationCap, Trophy, Award, Compass, Sparkles, CheckCircle2 } from 'lucide-react';
+import { PERSONAL_INFO, ACHIEVEMENTS_DATA, EDUCATION_DATA } from '../data/portfolioData';
 
 export const About: React.FC = () => {
   return (
@@ -43,20 +43,20 @@ export const About: React.FC = () => {
 
               <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed text-base">
                 <p>
-                  I am a passionate <strong className="text-slate-900 dark:text-emerald-300">Computer Science Engineering student</strong> at ITS Engineering College, Greater Noida, and a dedicated Full-Stack Developer. I specialize in building end-to-end web architectures, high-concurrency real-time features, and secure backend systems.
+                  I am a <strong className="text-slate-900 dark:text-emerald-300">Computer Science Engineering student</strong> at ITS Engineering College (2023 – 2027) with an <strong className="text-slate-900 dark:text-emerald-300">8.1 CGPA</strong> and the distinction of ranking as the <strong className="text-slate-900 dark:text-emerald-300">6th Academic Topper in B.Tech 1st Year</strong>.
                 </p>
                 <p>
-                  My engineering perspective is rooted in disciplined problem solving. Having conquered <strong className="text-slate-900 dark:text-emerald-300">600+ algorithmic problems</strong> across platforms like LeetCode, Codeforces, and GeeksforGeeks, I approach development with an emphasis on time and space complexity, modular design, and data structures.
+                  My engineering perspective is rooted in disciplined problem solving. Having solved <strong className="text-slate-900 dark:text-emerald-300">800+ algorithmic problems</strong> across LeetCode, Codeforces, and GeeksforGeeks, and achieving a <strong className="text-slate-900 dark:text-emerald-300">Global Rank 614 out of 30,000+ competitors (Top 2%)</strong> in LeetCode Weekly Contest 479, I write clean, optimized code with a focus on data structures, time complexity, and memory management.
                 </p>
                 <p>
-                  Whether integrating complex machine learning pipelines in hackathons (like HackWithDelhi), spearheading frontend auth architectures (Hackfed 0.1), or architecting WebSocket game engines (Chess-App), I take pride in crafting clean, recruiter-friendly code that scales gracefully.
+                  I specialize in architecting full-stack systems with <strong className="text-slate-900 dark:text-emerald-300">Spring Boot, Java, and Spring Security</strong> for secure backend microservices, alongside reactive frontends in <strong className="text-slate-900 dark:text-emerald-300">React.js & Tailwind CSS</strong> and cross-platform mobile apps in <strong className="text-slate-900 dark:text-emerald-300">React Native & Expo</strong>.
                 </p>
               </div>
 
               {/* Verified Highlights List */}
               <div className="mt-8 pt-6 border-t border-slate-200 dark:border-emerald-500/15">
                 <h4 className="text-sm font-semibold uppercase font-mono tracking-wider text-slate-900 dark:text-emerald-300 mb-4">
-                  Core Engineering Principles:
+                  Verified Resume Highlights:
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {PERSONAL_INFO.aboutHighlights.map((highlight, index) => (
@@ -74,9 +74,9 @@ export const About: React.FC = () => {
 
             {/* Quick Goals Banner */}
             <div className="mt-8 p-4 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-transparent border border-emerald-500/20 flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-emerald-500 shrink-0" />
+              <Trophy className="w-5 h-5 text-emerald-500 shrink-0" />
               <div className="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                <strong className="text-emerald-600 dark:text-emerald-400">Current Focus:</strong> Exploring AWS cloud native services, containerization with Docker & Kubernetes, and CI/CD pipelines.
+                <strong className="text-emerald-600 dark:text-emerald-400">Competitive Standout:</strong> LeetCode Weekly Contest 479 Global Rank 614 (Top 2% / 30,000+).
               </div>
             </div>
           </motion.div>
@@ -116,21 +116,21 @@ export const About: React.FC = () => {
                 <span>Academic Foundation</span>
               </div>
 
-              {/* Ongoing B.Tech */}
+              {/* B.Tech */}
               <div className="p-4 rounded-2xl bg-slate-50/80 dark:bg-emerald-950/20 border border-slate-200/80 dark:border-emerald-500/15 mb-3">
                 <div className="flex justify-between items-start gap-2">
                   <span className="text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 font-semibold">
-                    Ongoing • B.Tech CSE
+                    2023 – 2027 • B.Tech (CSE)
                   </span>
                   <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-700 dark:text-emerald-300">
-                    8.5 CGPA
+                    CGPA: 8.1
                   </span>
                 </div>
                 <div className="font-bold text-slate-900 dark:text-white text-sm sm:text-base mt-1">
                   ITS Engineering College
                 </div>
                 <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                  Greater Noida, Uttar Pradesh, India
+                  Greater Noida, India • Ranked 6th Academic Topper (1st Year)
                 </div>
               </div>
 
@@ -138,17 +138,17 @@ export const About: React.FC = () => {
               <div className="p-4 rounded-2xl bg-slate-50/80 dark:bg-emerald-950/20 border border-slate-200/80 dark:border-emerald-500/15">
                 <div className="flex justify-between items-start gap-2">
                   <span className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">
-                    02/2021 – 03/2023 • Intermediate
+                    2021 – 2023 • Intermediate (PCMC)
                   </span>
                   <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300">
-                    88% Distinction
+                    88.2% Distinction
                   </span>
                 </div>
                 <div className="font-bold text-slate-900 dark:text-white text-sm sm:text-base mt-1">
                   RLSY Jhumary Telaiya (JAC)
                 </div>
                 <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                  Koderma, Jharkhand, India
+                  Koderma, JH • Physics, Chemistry, Math & Computer Science
                 </div>
               </div>
             </div>

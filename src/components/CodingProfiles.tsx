@@ -7,8 +7,7 @@ import {
   Sparkles, 
   CheckCircle2, 
   Flame, 
-  Terminal, 
-  Cpu, 
+  Trophy,
   GitBranch, 
   Target
 } from 'lucide-react';
@@ -16,14 +15,14 @@ import { PERSONAL_INFO, CODING_PROFILES } from '../data/portfolioData';
 
 export const CodingProfiles: React.FC = () => {
   const dsaDomains = [
-    { name: "Arrays & Two Pointers", status: "Mastered", count: "120+ Solved" },
-    { name: "Dynamic Programming", status: "Advanced", count: "80+ Solved" },
-    { name: "Trees & Binary Search Trees", status: "Proficient", count: "75+ Solved" },
-    { name: "Graphs & Traversals (BFS/DFS)", status: "Proficient", count: "65+ Solved" },
-    { name: "Recursion & Backtracking", status: "Advanced", count: "50+ Solved" },
-    { name: "Binary Search & Sorting", status: "Mastered", count: "60+ Solved" },
-    { name: "Strings & Sliding Window", status: "Advanced", count: "70+ Solved" },
-    { name: "Stacks, Queues & Heaps", status: "Proficient", count: "55+ Solved" },
+    { name: "Arrays & Two Pointers", status: "Mastered", count: "160+ Solved" },
+    { name: "Dynamic Programming", status: "Advanced", count: "110+ Solved" },
+    { name: "Trees & Binary Search Trees", status: "Proficient", count: "95+ Solved" },
+    { name: "Graphs & Traversals (BFS/DFS)", status: "Proficient", count: "85+ Solved" },
+    { name: "Recursion & Backtracking", status: "Advanced", count: "70+ Solved" },
+    { name: "Binary Search & Sorting", status: "Mastered", count: "80+ Solved" },
+    { name: "Strings & Sliding Window", status: "Advanced", count: "90+ Solved" },
+    { name: "Stacks, Queues & Heaps", status: "Proficient", count: "70+ Solved" },
   ];
 
   return (
@@ -43,7 +42,7 @@ export const CodingProfiles: React.FC = () => {
             Coding Profiles & Algorithmic Track
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            A verified track record of 600+ solved data structures and algorithmic challenges, strengthening clean architectural reasoning, time-space efficiency, and engineering consistency.
+            A verified track record of 800+ solved data structures and algorithmic challenges, strengthening clean architectural reasoning, time-space efficiency, and engineering consistency.
           </p>
         </div>
 
@@ -85,21 +84,27 @@ export const CodingProfiles: React.FC = () => {
               </div>
 
               <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                Active problem solver practicing competitive algorithms in C++, JavaScript, and Python. Focused on optimization, edge cases, and recursive tree/graph structures.
+                Active problem solver practicing competitive algorithms in C++, Java, and JavaScript. Consistently competing in weekly contests with proven global rankings.
               </p>
 
-              {/* Verified Big Stat */}
-              <div className="p-4 rounded-2xl bg-amber-500/5 border border-amber-500/20 flex items-center justify-between mb-6">
-                <div>
-                  <div className="text-2xl sm:text-3xl font-extrabold font-display text-amber-500">
-                    600+ Problems
+              {/* Verified Big Stats: 800+ and Contest Rank 614 */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                <div className="p-4 rounded-2xl bg-amber-500/5 border border-amber-500/20">
+                  <div className="text-2xl font-extrabold font-display text-amber-500">
+                    800+ Problems
                   </div>
-                  <div className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">
-                    LeetCode • Codeforces • GeeksforGeeks
+                  <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                    LeetCode • Codeforces • GFG
                   </div>
                 </div>
-                <div className="px-3 py-1.5 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-mono font-bold">
-                  Verified Count
+
+                <div className="p-4 rounded-2xl bg-emerald-500/5 border border-emerald-500/20">
+                  <div className="text-2xl font-extrabold font-display text-emerald-500">
+                    Rank 614
+                  </div>
+                  <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                    Contest 479 (Top 2% / 30,000+)
+                  </div>
                 </div>
               </div>
             </div>
@@ -151,17 +156,17 @@ export const CodingProfiles: React.FC = () => {
               </div>
 
               <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                Open-source repositories spanning full-stack web platforms, React Native mobile apps, real-time WebSocket servers, and hackathon project codebases.
+                Open-source repositories spanning enterprise Spring Boot & Java microservices, React & Vite frontends, and React Native cross-platform mobile apps.
               </p>
 
               {/* Verified Big Stat */}
               <div className="p-4 rounded-2xl bg-emerald-500/5 border border-emerald-500/20 flex items-center justify-between mb-6">
                 <div>
                   <div className="text-2xl sm:text-3xl font-extrabold font-display text-emerald-500">
-                    Active Codebases
+                    Production Systems
                   </div>
                   <div className="text-xs font-mono text-slate-500 dark:text-slate-400 mt-0.5">
-                    React • React Native • Node • Spring Boot
+                    Spring Boot • React • React Native • Docker
                   </div>
                 </div>
                 <div className="px-3 py-1.5 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold flex items-center gap-1">
@@ -197,7 +202,7 @@ export const CodingProfiles: React.FC = () => {
               </h3>
             </div>
             <div className="text-xs font-mono text-slate-500 dark:text-emerald-400/80">
-              600+ Total Problems Solved
+              800+ Total Problems Solved
             </div>
           </div>
 

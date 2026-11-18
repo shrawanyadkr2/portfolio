@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, FileDown, Github, Linkedin, Code2, Instagram, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, FileDown, Github, Linkedin, Code2, Instagram, Sparkles, Trophy, Award } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
             {/* Social Media Links */}
             <div className="flex items-center gap-4 pt-2 border-t border-slate-200 dark:border-emerald-500/10 w-full">
               <span className="text-xs font-mono font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                Connect:
+                Profiles:
               </span>
               <div className="flex items-center gap-3">
                 <a
@@ -122,7 +122,7 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Right Column: Visual Portrait & Floating Developer Cards */}
+          {/* Right Column: Visual Portrait & Floating Verified Cards */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -149,47 +149,47 @@ export const Hero: React.FC = () => {
                     <span>Computer Science Engineer</span>
                   </div>
                   <div className="text-white text-sm font-bold font-display mt-0.5">
-                    Full-Stack & Systems Focus
+                    Spring Boot & React Native
                   </div>
                 </div>
               </div>
 
-              {/* Floating Card 1: 600+ DSA Problems Solved */}
+              {/* Floating Card 1: 800+ DSA Problems Solved */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -left-6 sm:-left-10 top-10 p-3 sm:p-3.5 rounded-2xl bg-white/90 dark:bg-[#0c1410]/90 backdrop-blur-xl border border-slate-200 dark:border-emerald-500/30 shadow-xl shadow-slate-900/10 dark:shadow-emerald-950/40 flex items-center gap-3 animate-float-slow"
+                className="absolute -left-6 sm:-left-10 top-8 p-3 sm:p-3.5 rounded-2xl bg-white/90 dark:bg-[#0c1410]/90 backdrop-blur-xl border border-slate-200 dark:border-emerald-500/30 shadow-xl shadow-slate-900/10 dark:shadow-emerald-950/40 flex items-center gap-3 animate-float-slow"
               >
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-emerald-500/20 border border-amber-500/30 flex items-center justify-center text-amber-500">
                   <Code2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">
-                    Problem Solving
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">
+                    Competitive Coding
                   </div>
                   <div className="text-sm font-extrabold text-slate-900 dark:text-emerald-300 font-display">
-                    600+ DSA Solved
+                    800+ DSA Solved
                   </div>
                 </div>
               </motion.div>
 
-              {/* Floating Card 2: B.Tech CGPA 8.5 */}
+              {/* Floating Card 2: Contest 479 Global Rank 614 */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="absolute -right-6 sm:-right-8 bottom-24 p-3 sm:p-3.5 rounded-2xl bg-white/90 dark:bg-[#0c1410]/90 backdrop-blur-xl border border-slate-200 dark:border-emerald-500/30 shadow-xl shadow-slate-900/10 dark:shadow-emerald-950/40 flex items-center gap-3"
+                className="absolute -right-6 sm:-right-8 bottom-20 p-3 sm:p-3.5 rounded-2xl bg-white/90 dark:bg-[#0c1410]/90 backdrop-blur-xl border border-slate-200 dark:border-emerald-500/30 shadow-xl shadow-slate-900/10 dark:shadow-emerald-950/40 flex items-center gap-3"
               >
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-500">
-                  <CheckCircle2 className="w-5 h-5" />
+                  <Trophy className="w-5 h-5 text-emerald-400" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">
-                    Academics
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">
+                    LeetCode Contest 479
                   </div>
                   <div className="text-sm font-extrabold text-slate-900 dark:text-emerald-300 font-display">
-                    8.5 B.Tech CGPA
+                    Global Rank 614 (Top 2%)
                   </div>
                 </div>
               </motion.div>
