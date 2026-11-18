@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, ArrowUpRight, Sparkles, Code, Terminal, Layers, Smartphone } from 'lucide-react';
+import { Github, ExternalLink, ArrowUpRight, Sparkles, Smartphone, Code, Terminal, Layers } from 'lucide-react';
 import { PROJECTS, Project } from '../data/portfolioData';
 import { ProjectModal } from './ProjectModal';
 
@@ -65,54 +65,83 @@ export const Projects: React.FC = () => {
               className="flex flex-col justify-between rounded-3xl bg-white/80 dark:bg-[#0a110d]/90 border border-slate-200/80 dark:border-emerald-500/15 backdrop-blur-xl shadow-xl shadow-slate-900/5 dark:shadow-emerald-950/20 hover:border-emerald-500/40 transition-all duration-300 overflow-hidden group"
             >
               <div>
-                {/* Visual Header Mockup */}
-                <div className="relative h-44 bg-gradient-to-br from-slate-900 via-[#07130d] to-emerald-950/80 p-5 flex flex-col justify-between border-b border-emerald-500/15 overflow-hidden">
-                  {/* Subtle Grid in thumbnail */}
-                  <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
-                  
-                  {/* Top Bar */}
-                  <div className="flex items-center justify-between relative z-10">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                      <span className="ml-1.5 font-mono text-[10px] text-emerald-400/80">
-                        {project.id}.java
-                      </span>
-                    </div>
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                      {project.badge}
-                    </span>
-                  </div>
-
-                  {/* Center Graphic */}
-                  <div className="relative z-10 flex items-center justify-between">
-                    <div>
-                      <div className="text-emerald-400 text-[10px] font-mono font-bold tracking-widest uppercase mb-0.5">
-                        {project.category}
+                {/* Visual Header Mockup / Real Screenshot */}
+                <div className="relative h-48 bg-gradient-to-br from-slate-900 via-[#07130d] to-emerald-950/80 overflow-hidden border-b border-emerald-500/15">
+                  {project.image ? (
+                    <div className="relative w-full h-full overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent" />
+                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                        <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-black/60 backdrop-blur-md text-emerald-300 border border-emerald-500/30">
+                          {project.badge}
+                        </span>
+                        <span className="px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-black/60 backdrop-blur-md text-slate-300 border border-white/10">
+                          {project.category}
+                        </span>
                       </div>
-                      <div className="text-white text-xl font-extrabold font-display truncate max-w-[210px]">
-                        {project.title}
+                      <div className="absolute bottom-3 left-3 right-3 z-10">
+                        <div className="text-[10px] text-emerald-400 font-mono font-bold tracking-wider uppercase">
+                          {project.metrics}
+                        </div>
+                        <div className="text-white text-base font-bold font-display truncate">
+                          {project.title}
+                        </div>
                       </div>
                     </div>
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300 shrink-0">
-                      {project.isMobile ? (
-                        <Smartphone className="w-6 h-6" />
-                      ) : (
-                        <Terminal className="w-6 h-6" />
-                      )}
-                    </div>
-                  </div>
+                  ) : (
+                    <div className="p-5 h-full flex flex-col justify-between">
+                      {/* Subtle Grid in thumbnail */}
+                      <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
+                      
+                      {/* Top Bar */}
+                      <div className="flex items-center justify-between relative z-10">
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                          <span className="ml-1.5 font-mono text-[10px] text-emerald-400/80">
+                            {project.id}.java
+                          </span>
+                        </div>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                          {project.badge}
+                        </span>
+                      </div>
 
-                  {/* Bottom Metrics Chip */}
-                  <div className="relative z-10 flex items-center justify-between text-[10px] text-slate-300 font-mono">
-                    <span className="text-emerald-400/90 font-medium truncate">
-                      {project.metrics}
-                    </span>
-                    <span className="text-slate-400 shrink-0">
-                      ✓ Verified
-                    </span>
-                  </div>
+                      {/* Center Graphic */}
+                      <div className="relative z-10 flex items-center justify-between">
+                        <div>
+                          <div className="text-emerald-400 text-[10px] font-mono font-bold tracking-widest uppercase mb-0.5">
+                            {project.category}
+                          </div>
+                          <div className="text-white text-xl font-extrabold font-display truncate max-w-[210px]">
+                            {project.title}
+                          </div>
+                        </div>
+                        <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all duration-300 shrink-0">
+                          {project.isMobile ? (
+                            <Smartphone className="w-6 h-6" />
+                          ) : (
+                            <Terminal className="w-6 h-6" />
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Bottom Metrics Chip */}
+                      <div className="relative z-10 flex items-center justify-between text-[10px] text-slate-300 font-mono">
+                        <span className="text-emerald-400/90 font-medium truncate">
+                          {project.metrics}
+                        </span>
+                        <span className="text-slate-400 shrink-0">
+                          ✓ Verified
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content Body */}
@@ -157,36 +186,56 @@ export const Projects: React.FC = () => {
               </div>
 
               {/* Bottom Card Footer Actions */}
-              <div className="p-6 pt-0 flex items-center justify-between gap-3">
-                <button
-                  onClick={() => setSelectedProject(project)}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 focus:outline-none group/btn"
-                >
-                  <span>Architecture Details</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                </button>
-
-                <div className="flex items-center gap-2">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.title} on GitHub`}
-                    className="p-2 rounded-xl bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 dark:hover:text-white border border-slate-200 dark:border-emerald-500/20 hover:border-emerald-500/40 transition-colors"
-                  >
-                    <Github className="w-3.5 h-3.5" />
-                  </a>
-
-                  {project.liveUrl && (
+              <div className="p-6 pt-0 flex flex-col gap-3">
+                
+                {/* Resume-style separate Frontend & Backend GitHub buttons if available */}
+                {project.githubFrontendUrl && project.githubBackendUrl && (
+                  <div className="flex items-center gap-2 pt-2 border-t border-slate-100 dark:border-emerald-500/10">
+                    <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500">
+                      GitHub:
+                    </span>
                     <a
-                      href={project.liveUrl}
+                      href={project.githubFrontendUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`View ${project.title} live`}
-                      className="p-2 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 border border-emerald-500/20 transition-colors"
+                      className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 border border-slate-200 dark:border-emerald-500/20 transition-colors flex items-center gap-1"
                     >
-                      <ExternalLink className="w-3.5 h-3.5" />
+                      <Github className="w-3 h-3" />
+                      <span>Frontend</span>
                     </a>
+                    <a
+                      href={project.githubBackendUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 border border-slate-200 dark:border-emerald-500/20 transition-colors flex items-center gap-1"
+                    >
+                      <Github className="w-3 h-3" />
+                      <span>Backend</span>
+                    </a>
+                  </div>
+                )}
+
+                <div className="flex items-center justify-between gap-3">
+                  <button
+                    onClick={() => setSelectedProject(project)}
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 focus:outline-none group/btn"
+                  >
+                    <span>Architecture Details</span>
+                    <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                  </button>
+
+                  {!project.githubFrontendUrl && (
+                    <div className="flex items-center gap-2">
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} on GitHub`}
+                        className="p-2 rounded-xl bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 dark:hover:text-white border border-slate-200 dark:border-emerald-500/20 hover:border-emerald-500/40 transition-colors"
+                      >
+                        <Github className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
                   )}
                 </div>
               </div>

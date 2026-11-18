@@ -7,10 +7,13 @@ export interface Project {
   technologies: string[];
   features: string[];
   githubUrl: string;
+  githubFrontendUrl?: string;
+  githubBackendUrl?: string;
   liveUrl?: string;
   apkUrl?: string;
   videoUrl?: string;
   videoUrl2?: string;
+  image?: string;
   category: 'Full Stack' | 'Mobile App';
   status: 'Completed' | 'In-Progress';
   badge: string;
@@ -108,7 +111,7 @@ export const MOBILE_PROJECTS: Project[] = [
       "Full integration with custom Java & Spring Boot REST backend",
       "Direct compiled Android APK binary download available"
     ],
-    githubUrl: "https://github.com/shrawanyadkr2",
+    githubUrl: "https://github.com/shrawanyadkr2/ResumeBuilderApp",
     apkUrl: "/ResumeGenie.apk",
     videoUrl: "/resume_app_demo_1.mp4",
     videoUrl2: "/resume_app_demo_2.mp4",
@@ -185,7 +188,10 @@ export const PROJECTS: Project[] = [
       "Automated verification emails via Brevo and Cloudinary profile photo uploads",
       "Packaged backend with Dockerfile and deployed to Render"
     ],
-    githubUrl: "https://github.com/shrawanyadkr2",
+    githubUrl: "https://github.com/shrawanyadkr2/schoolmanagement-frontend",
+    githubFrontendUrl: "https://github.com/shrawanyadkr2/schoolmanagement-frontend",
+    githubBackendUrl: "https://github.com/shrawanyadkr2/schoolmanagement-backend",
+    image: "/school_erp_screenshot.png",
     category: "Full Stack",
     status: "Completed",
     badge: "Enterprise Web App",
@@ -193,7 +199,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "resumebuilder-apps",
-    title: "ResumeBuilder Apps",
+    title: "ResumeBuilder Apps (sky.devX SaaS)",
     subtitle: "Full-Stack SaaS Platform for ATS-Friendly Professional Resumes",
     description: "A full-stack SaaS platform empowering users to construct ATS-friendly professional resumes with real-time live preview.",
     detailedDescription: "ResumeBuilder Apps provides a complete SaaS resume generation workflow. The Java & Spring Boot backend enforces JWT and Spring Security authentication, backed by MongoDB for modular resume section storage (experience, education, skills, tokens). The React & Tailwind frontend incorporates AuthContext for persistent sessions, Brevo API for email verification, and Cloudinary for photo uploads, deployed across Render (backend) and Vercel (frontend).",
@@ -218,7 +224,10 @@ export const PROJECTS: Project[] = [
       "Brevo API integration for verification emails and Cloudinary for headshot hosting",
       "Production deployment on Vercel (frontend) and Render (backend)"
     ],
-    githubUrl: "https://github.com/shrawanyadkr2",
+    githubUrl: "https://github.com/shrawanyadkr2/resumebuilder-frontend",
+    githubFrontendUrl: "https://github.com/shrawanyadkr2/resumebuilder-frontend",
+    githubBackendUrl: "https://github.com/shrawanyadkr2/resumebuilder-backend",
+    image: "/resumebuilder_dark_screenshot.png",
     category: "Full Stack",
     status: "Completed",
     badge: "SaaS Resume Engine",

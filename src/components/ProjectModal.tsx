@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Github, CheckCircle2, Sparkles, Tag, Download, Smartphone } from 'lucide-react';
+import { X, ExternalLink, Github, CheckCircle2, Sparkles, Tag, Download } from 'lucide-react';
 import { Project } from '../data/portfolioData';
 
 interface ProjectModalProps {
@@ -48,11 +48,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             <span className="px-3 py-1 rounded-full text-xs font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-emerald-500/10">
               {project.category}
             </span>
-            {project.status === 'In-Progress' && (
-              <span className="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
-                In Active Development
-              </span>
-            )}
           </div>
 
           {/* Title */}
@@ -62,6 +57,17 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <p className="text-sm sm:text-base font-semibold text-emerald-600 dark:text-emerald-300 mb-6">
             {project.subtitle}
           </p>
+
+          {/* Real Project Screenshot if available */}
+          {project.image && (
+            <div className="mb-6 rounded-2xl overflow-hidden border border-slate-200 dark:border-emerald-500/20 shadow-lg">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          )}
 
           {/* Detailed Narrative */}
           <div className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6 space-y-3">
@@ -115,15 +121,40 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               </a>
             )}
 
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-emerald-950 dark:hover:bg-emerald-900 border border-slate-800 dark:border-emerald-500/30 transition-all hover:scale-105"
-            >
-              <Github className="w-4 h-4" />
-              <span>View Source on GitHub</span>
-            </a>
+            {/* Separate Frontend and Backend GitHub links if available */}
+            {project.githubFrontendUrl && project.githubBackendUrl ? (
+              <>
+                <a
+                  href={project.githubFrontendUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-emerald-950 dark:hover:bg-emerald-900 border border-slate-800 dark:border-emerald-500/30 transition-all hover:scale-105"
+                >
+                  <Github className="w-4 h-4" />
+                  <span>Frontend Code (GitHub)</span>
+                </a>
+
+                <a
+                  href={project.githubBackendUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-emerald-950 dark:hover:bg-emerald-900 border border-slate-800 dark:border-emerald-500/30 transition-all hover:scale-105"
+                >
+                  <Github className="w-4 h-4" />
+                  <span>Backend Code (GitHub)</span>
+                </a>
+              </>
+            ) : (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 dark:bg-emerald-950 dark:hover:bg-emerald-900 border border-slate-800 dark:border-emerald-500/30 transition-all hover:scale-105"
+              >
+                <Github className="w-4 h-4" />
+                <span>View Source on GitHub</span>
+              </a>
+            )}
 
             {project.liveUrl && (
               <a
