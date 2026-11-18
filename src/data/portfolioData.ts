@@ -54,7 +54,7 @@ export interface AchievementItem {
 }
 
 export const PERSONAL_INFO = {
-  name: "Shrawan Kumar Yadav",
+  name: "Shrawan Kr. Yadav",
   title: "Software Developer | Full Stack (Spring Boot & React) | React Native",
   brandName: "sky.devX",
   email: "shrawan29yadav@gmail.com",

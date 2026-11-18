@@ -30,21 +30,15 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="md:col-span-5 flex flex-col items-start">
             <a href="#home" className="flex items-center gap-2.5 group mb-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white shadow-md shadow-emerald-500/20">
-                <Terminal className="w-5 h-5 text-emerald-100" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">
-                  sky<span className="text-emerald-500">.devX</span>
-                </span>
-                <span className="text-[10px] uppercase font-mono tracking-widest text-emerald-600 dark:text-emerald-400 font-semibold -mt-1">
-                  Developer Portfolio
-                </span>
-              </div>
+              <img
+                src="/logo.png"
+                alt="sky.devX"
+                className="h-10 w-auto object-contain rounded-xl shadow-md shadow-cyan-500/10"
+              />
             </a>
 
             <p className="text-sm text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed mb-6">
-              Personal portfolio of <strong className="text-slate-900 dark:text-white">Shrawan Kumar Yadav</strong> — Software Developer, Full-Stack Engineer, and Computer Science Engineering Student.
+              Personal portfolio of <strong className="text-slate-900 dark:text-white">Shrawan Kr. Yadav</strong> — Software Developer, Full-Stack Engineer, and Computer Science Student.
             </p>
 
             {/* Social Icons */}
@@ -140,7 +134,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-4">
-          <p>© {new Date().getFullYear()} Shrawan Kumar Yadav. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Shrawan Kr. Yadav. All rights reserved.</p>
           <p className="flex items-center gap-1">
             <span>Built with React, TypeScript & Tailwind CSS</span>
           </p>

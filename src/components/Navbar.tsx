@@ -65,17 +65,11 @@ export const Navbar: React.FC = () => {
             className="flex items-center gap-2.5 group focus:outline-none"
             aria-label="sky.devX Home"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform duration-200">
-              <Terminal className="w-5 h-5 text-emerald-100" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-extrabold text-xl tracking-tight text-slate-900 dark:text-white flex items-center">
-                sky<span className="text-emerald-500">.devX</span>
-              </span>
-              <span className="text-[10px] uppercase font-mono tracking-widest text-emerald-600 dark:text-emerald-400 font-semibold -mt-1">
-                Portfolio
-              </span>
-            </div>
+            <img
+              src="/logo.png"
+              alt="sky.devX"
+              className="h-9 sm:h-10 w-auto object-contain rounded-xl shadow-md shadow-cyan-500/10 group-hover:scale-105 transition-transform duration-200"
+            />
           </a>
 
           {/* Desktop Nav Items */}
@@ -115,8 +109,8 @@ export const Navbar: React.FC = () => {
 
             {/* Resume Button */}
             <a
-              href="/Shrawan_Kumar_Yadav_Resume.pdf"
-              download="Shrawan_Kumar_Yadav_Resume.pdf"
+              href="/Shrawan_Kr_Yadav_Resume.pdf"
+              download="Shrawan_Kr_Yadav_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-md shadow-emerald-500/20 hover:shadow-emerald-500/30 transition-all duration-200 hover:-translate-y-0.5"
@@ -174,8 +168,8 @@ export const Navbar: React.FC = () => {
             })}
             <div className="pt-3 border-t border-slate-200 dark:border-emerald-500/10 flex flex-col gap-2">
               <a
-                href="/Shrawan_Kumar_Yadav_Resume.pdf"
-                download="Shrawan_Kumar_Yadav_Resume.pdf"
+                href="/Shrawan_Kr_Yadav_Resume.pdf"
+                download="Shrawan_Kr_Yadav_Resume.pdf"
                 className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 shadow-md shadow-emerald-500/20"
               >
                 <FileDown className="w-4 h-4" />

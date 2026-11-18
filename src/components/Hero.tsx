@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-4">
               HI, I'M <br className="hidden sm:inline" />
               <span className="emerald-text-gradient dark:emerald-text-gradient-bright drop-shadow-sm">
-                SHRAWAN KUMAR YADAV
+                SHRAWAN KR. YADAV
               </span>
             </h1>
 
@@ -62,8 +62,8 @@ export const Hero: React.FC = () => {
               </a>
 
               <a
-                href="/Shrawan_Kumar_Yadav_Resume.pdf"
-                download="Shrawan_Kumar_Yadav_Resume.pdf"
+                href="/Shrawan_Kr_Yadav_Resume.pdf"
+                download="Shrawan_Kr_Yadav_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-emerald-500/30 bg-white/70 dark:bg-slate-900/60 hover:bg-slate-100 dark:hover:bg-emerald-950/40 hover:border-emerald-500/50 backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5"
@@ -141,7 +141,7 @@ export const Hero: React.FC = () => {
               <div className="w-full h-full rounded-[22px] overflow-hidden bg-slate-900 relative group">
                 <img
                   src="/profile.jpg"
-                  alt="Shrawan Kumar Yadav - Software Developer"
+                  alt="Shrawan Kr. Yadav - Software Developer"
                   className="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.03] transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
