@@ -194,6 +194,7 @@ export const PROJECTS: Project[] = [
     githubFrontendUrl: "https://github.com/shrawanyadkr2/schoolmanagement-frontend",
     githubBackendUrl: "https://github.com/shrawanyadkr2/schoolmanagement-backend",
     image: "/school_erp_screenshot.png",
+    videoUrl: "/school_erp_demo.mp4",
     category: "Full Stack",
     status: "Completed",
     badge: "Full-Stack ERP",
