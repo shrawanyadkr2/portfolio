@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, FileDown, Github, Linkedin, Code2, Instagram, Sparkles, Trophy, Award } from 'lucide-react';
+import { ArrowUpRight, FileDown, Github, Linkedin, Code2, Instagram, Sparkles, Terminal } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
@@ -122,7 +122,7 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Right Column: Visual Portrait & Floating Verified Cards */}
+          {/* Right Column: Visual Portrait with Gentle Movement and Only One "Software Engineer" Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -132,8 +132,12 @@ export const Hero: React.FC = () => {
             {/* Glow Aura */}
             <div className="absolute w-72 h-72 sm:w-80 sm:h-80 bg-gradient-to-tr from-emerald-500/25 to-teal-500/20 rounded-full blur-2xl -z-10 animate-pulse-slow" />
 
-            {/* Portrait Frame Container */}
-            <div className="relative w-64 sm:w-80 md:w-84 aspect-[4/5] rounded-3xl p-1.5 bg-gradient-to-b from-emerald-500/40 via-teal-500/20 to-emerald-500/30 shadow-2xl shadow-emerald-900/30">
+            {/* Profile Frame with subtle floating movement */}
+            <motion.div
+              animate={{ y: [0, -7, 0] }}
+              transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
+              className="relative w-64 sm:w-80 md:w-84 aspect-[4/5] rounded-3xl p-1.5 bg-gradient-to-b from-emerald-500/40 via-teal-500/20 to-emerald-500/30 shadow-2xl shadow-emerald-900/30"
+            >
               <div className="w-full h-full rounded-[22px] overflow-hidden bg-slate-900 relative group">
                 <img
                   src="/profile.jpg"
@@ -141,60 +145,35 @@ export const Hero: React.FC = () => {
                   className="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.03] transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                
-                {/* Embedded Bottom Tag inside Portrait */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-emerald-500/25 text-left">
-                  <div className="flex items-center gap-1.5 text-xs font-semibold text-emerald-400">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>Computer Science Engineer</span>
-                  </div>
-                  <div className="text-white text-sm font-bold font-display mt-0.5">
-                    Spring Boot & React Native
-                  </div>
-                </div>
               </div>
 
-              {/* Floating Card 1: 800+ DSA Problems Solved */}
+              {/* Only One Card: Software Engineer */}
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -left-6 sm:-left-10 top-8 p-3 sm:p-3.5 rounded-2xl bg-white/90 dark:bg-[#0c1410]/90 backdrop-blur-xl border border-slate-200 dark:border-emerald-500/30 shadow-xl shadow-slate-900/10 dark:shadow-emerald-950/40 flex items-center gap-3 animate-float-slow"
+                className="absolute -bottom-5 left-1/2 -translate-x-1/2 w-[92%] p-3.5 rounded-2xl bg-white/95 dark:bg-[#0c1410]/95 backdrop-blur-xl border border-slate-200 dark:border-emerald-500/30 shadow-xl shadow-slate-900/15 dark:shadow-emerald-950/50 flex items-center gap-3.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-emerald-500/20 border border-amber-500/30 flex items-center justify-center text-amber-500">
-                  <Code2 className="w-5 h-5" />
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-md shadow-emerald-500/25 shrink-0">
+                  <Terminal className="w-5 h-5 text-emerald-100" />
                 </div>
-                <div>
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">
-                    Competitive Coding
+                <div className="text-left overflow-hidden">
+                  <div className="flex items-center gap-1.5">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold">
+                      Profession
+                    </span>
                   </div>
-                  <div className="text-sm font-extrabold text-slate-900 dark:text-emerald-300 font-display">
-                    800+ DSA Solved
+                  <div className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white font-display truncate">
+                    Software Engineer
                   </div>
                 </div>
               </motion.div>
 
-              {/* Floating Card 2: Contest 479 Global Rank 614 */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="absolute -right-6 sm:-right-8 bottom-20 p-3 sm:p-3.5 rounded-2xl bg-white/90 dark:bg-[#0c1410]/90 backdrop-blur-xl border border-slate-200 dark:border-emerald-500/30 shadow-xl shadow-slate-900/10 dark:shadow-emerald-950/40 flex items-center gap-3"
-              >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-500">
-                  <Trophy className="w-5 h-5 text-emerald-400" />
-                </div>
-                <div>
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">
-                    LeetCode Contest 479
-                  </div>
-                  <div className="text-sm font-extrabold text-slate-900 dark:text-emerald-300 font-display">
-                    Global Rank 614 (Top 2%)
-                  </div>
-                </div>
-              </motion.div>
-
-            </div>
+            </motion.div>
           </motion.div>
 
         </div>
