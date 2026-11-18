@@ -62,161 +62,313 @@ export const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="flex flex-col justify-between rounded-3xl bg-white/80 dark:bg-[#0a110d]/90 border border-slate-200/80 dark:border-emerald-500/15 backdrop-blur-xl shadow-xl shadow-slate-900/5 dark:shadow-emerald-950/20 hover:border-emerald-500/40 transition-all duration-300 overflow-hidden group"
+              className={`rounded-3xl bg-white/80 dark:bg-[#0a110d]/90 border border-slate-200/80 dark:border-emerald-500/15 backdrop-blur-xl shadow-xl shadow-slate-900/5 dark:shadow-emerald-950/20 hover:border-emerald-500/40 transition-all duration-300 overflow-hidden group ${
+                project.isMobile ? 'col-span-1 md:col-span-2 lg:col-span-3' : 'flex flex-col justify-between'
+              }`}
             >
-              <div>
-                {/* Clean, Full-Bleed Visual Header without any overlapping text or badge covers */}
-                <div className="relative h-52 bg-slate-950 overflow-hidden border-b border-emerald-500/15">
-                  {project.videoUrl ? (
-                    /* Real Screen Recording Video Loop for projects with video (Resume Genie Mobile & ResumeBuilder Full Stack) */
-                    <div className="w-full h-full overflow-hidden bg-black flex items-center justify-center">
-                      <video
-                        src={project.videoUrl}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      />
+              {project.isMobile ? (
+                /* Dedicated Side-by-Side Mobile Showcase Layout (Demo on Left, Details on Right) */
+                <div className="flex flex-col md:flex-row items-stretch">
+                  {/* Left Column: Vertical Smartphone Demo Mockup */}
+                  <div className="w-full md:w-5/12 lg:w-4/12 bg-gradient-to-b from-slate-950 via-[#07130e] to-slate-950 p-6 sm:p-8 flex items-center justify-center border-b md:border-b-0 md:border-r border-emerald-500/15 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-emerald-500/5 blur-2xl pointer-events-none" />
+
+                    {project.videoUrl ? (
+                      /* Real Phone Frame with Screen Recording Video */
+                      <div className="relative z-10 w-[210px] sm:w-[230px] aspect-[9/19] rounded-[34px] p-2.5 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-900 shadow-2xl shadow-emerald-950/50 border border-slate-600/50 flex flex-col items-center group-hover:scale-[1.02] transition-transform duration-300">
+                        {/* Phone Notch */}
+                        <div className="w-20 h-3 bg-black rounded-full mb-1.5 flex items-center justify-center shrink-0">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-800" />
+                        </div>
+                        {/* Video Screen Container */}
+                        <div className="w-full flex-1 rounded-[22px] overflow-hidden bg-black relative">
+                          <video
+                            src={project.videoUrl}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover object-top"
+                          />
+                          <div className="absolute top-2 left-2 px-1.5 py-0.5 rounded-md bg-black/70 backdrop-blur-md border border-white/10 flex items-center gap-1 text-[9px] font-mono text-emerald-400">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            <span>DEMO</span>
+                          </div>
+                        </div>
+                        {/* Bottom bar */}
+                        <div className="w-16 h-1 bg-slate-500/50 rounded-full mt-1.5 shrink-0" />
+                      </div>
+                    ) : project.image ? (
+                      /* Mobile UI Mockup Frame for CoffeeShop */
+                      <div className="relative z-10 w-[210px] sm:w-[230px] aspect-[9/19] rounded-[34px] p-2.5 bg-gradient-to-b from-amber-900/40 via-slate-800 to-slate-900 shadow-2xl shadow-amber-950/30 border border-amber-500/30 flex flex-col items-center group-hover:scale-[1.02] transition-transform duration-300">
+                        <div className="w-20 h-3 bg-black rounded-full mb-1.5 flex items-center justify-center shrink-0">
+                          <div className="w-1.5 h-1.5 rounded-full bg-slate-800" />
+                        </div>
+                        <div className="w-full flex-1 rounded-[22px] overflow-hidden bg-slate-950 relative">
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover object-top"
+                          />
+                          <div className="absolute top-2 left-2 px-1.5 py-0.5 rounded-md bg-black/70 backdrop-blur-md border border-white/10 flex items-center gap-1 text-[9px] font-mono text-amber-300">
+                            <Smartphone className="w-2.5 h-2.5" />
+                            <span>FIGMA UI</span>
+                          </div>
+                        </div>
+                        <div className="w-16 h-1 bg-slate-500/50 rounded-full mt-1.5 shrink-0" />
+                      </div>
+                    ) : null}
+                  </div>
+
+                  {/* Right Column: Project Details */}
+                  <div className="w-full md:w-7/12 lg:w-8/12 p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                      {/* Badges & Category */}
+                      <div className="flex flex-wrap items-center gap-2 mb-3">
+                        <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
+                          {project.badge}
+                        </span>
+                        <span className="px-3 py-1 rounded-full text-xs font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-emerald-500/10">
+                          {project.category}
+                        </span>
+                        {project.metrics && (
+                          <span className="px-3 py-1 rounded-full text-xs font-mono text-emerald-600 dark:text-emerald-400/90 bg-emerald-500/5 border border-emerald-500/15">
+                            {project.metrics}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Title & Subtitle */}
+                      <h3 className="font-display font-bold text-xl sm:text-2xl text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400 mt-1 mb-3">
+                        {project.subtitle}
+                      </p>
+
+                      {/* Description */}
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                        {project.description}
+                      </p>
+
+                      {/* Features */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-5">
+                        {project.features.map((feat, fIdx) => (
+                          <div key={fIdx} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300">
+                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Tech stack */}
+                      <div className="flex flex-wrap gap-1.5 mb-6">
+                        {project.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2.5 py-1 rounded-lg text-[11px] font-mono bg-slate-100 dark:bg-emerald-950/30 text-slate-700 dark:text-emerald-300 border border-slate-200/80 dark:border-emerald-500/15"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                  ) : project.image ? (
-                    /* Clean Full-Bleed Screenshot for School ERP, ResumeBuilder, CoffeeShop */
-                    <div className="w-full h-full overflow-hidden bg-slate-900">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                      />
+
+                    {/* Footer Actions */}
+                    <div className="pt-4 border-t border-slate-100 dark:border-emerald-500/10 flex flex-wrap items-center justify-between gap-3">
+                      <button
+                        onClick={() => setSelectedProject(project)}
+                        className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 focus:outline-none group/btn"
+                      >
+                        <span>Architecture Details</span>
+                        <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                      </button>
+
+                      <div className="flex items-center gap-2">
+                        {project.apkUrl && (
+                          <a
+                            href={project.apkUrl}
+                            download
+                            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 shadow-md shadow-emerald-500/20 transition-all hover:scale-105"
+                          >
+                            <Smartphone className="w-3.5 h-3.5" />
+                            <span>Download APK (75.7 MB)</span>
+                          </a>
+                        )}
+
+                        {project.githubUrl && (
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View ${project.title} on GitHub`}
+                            className="p-2 rounded-xl bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 dark:hover:text-white border border-slate-200 dark:border-emerald-500/20 hover:border-emerald-500/40 transition-colors"
+                          >
+                            <Github className="w-4 h-4" />
+                          </a>
+                        )}
+                      </div>
                     </div>
-                  ) : (
-                    /* Minimal Clean Gradient Frame if no image */
-                    <div className="w-full h-full p-6 flex flex-col justify-between bg-gradient-to-br from-slate-900 via-[#07130d] to-emerald-950/80">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                        <span className="ml-1.5 font-mono text-[10px] text-emerald-400/80">
-                          {project.id}.java
+                  </div>
+                </div>
+              ) : (
+                /* Standard Vertical Card Layout for Web Applications */
+                <>
+                  <div>
+                    {/* Clean, Full-Bleed Visual Header without any overlapping text or badge covers */}
+                    <div className="relative h-52 bg-slate-950 overflow-hidden border-b border-emerald-500/15">
+                      {project.videoUrl ? (
+                        /* Real Screen Recording Video Loop for projects with video */
+                        <div className="w-full h-full overflow-hidden bg-black flex items-center justify-center">
+                          <video
+                            src={project.videoUrl}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                      ) : project.image ? (
+                        /* Clean Full-Bleed Screenshot for School ERP, ResumeBuilder, CoffeeShop */
+                        <div className="w-full h-full overflow-hidden bg-slate-900">
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                      ) : (
+                        /* Minimal Clean Gradient Frame if no image */
+                        <div className="w-full h-full p-6 flex flex-col justify-between bg-gradient-to-br from-slate-900 via-[#07130d] to-emerald-950/80">
+                          <div className="flex items-center gap-1.5">
+                            <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                            <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                            <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                            <span className="ml-1.5 font-mono text-[10px] text-emerald-400/80">
+                              {project.id}.java
+                            </span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <div className="text-white text-xl font-bold font-display">
+                              {project.title}
+                            </div>
+                            <Terminal className="w-7 h-7 text-emerald-400" />
+                          </div>
+                          <div className="text-[11px] font-mono text-emerald-400">
+                            {project.metrics}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Content Body */}
+                    <div className="p-6">
+                      {/* Category & Badge Pills positioned cleanly in the body */}
+                      <div className="flex items-center gap-2 mb-2.5">
+                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
+                          {project.badge}
+                        </span>
+                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-emerald-500/10">
+                          {project.category}
                         </span>
                       </div>
-                      <div className="flex items-center justify-between">
-                        <div className="text-white text-xl font-bold font-display">
-                          {project.title}
-                        </div>
-                        <Terminal className="w-7 h-7 text-emerald-400" />
+
+                      <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-xs font-medium text-emerald-600 dark:text-emerald-400 mt-0.5 mb-2.5">
+                        {project.subtitle}
+                      </p>
+                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                        {project.description}
+                      </p>
+
+                      {/* Key Highlights from Resume */}
+                      <div className="space-y-1.5 mb-4">
+                        {project.features.slice(0, 2).map((feat, fIdx) => (
+                          <div key={fIdx} className="flex items-start gap-2 text-[11px] text-slate-600 dark:text-slate-400">
+                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
+                            <span className="line-clamp-2">{feat}</span>
+                          </div>
+                        ))}
                       </div>
-                      <div className="text-[11px] font-mono text-emerald-400">
-                        {project.metrics}
+
+                      {/* Tech Stack Pills */}
+                      <div className="flex flex-wrap gap-1 pt-1">
+                        {project.technologies.slice(0, 4).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-0.5 rounded-lg text-[10px] font-mono bg-slate-100 dark:bg-emerald-950/30 text-slate-700 dark:text-emerald-300 border border-slate-200/80 dark:border-emerald-500/15"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 4 && (
+                          <span className="px-1.5 py-0.5 rounded-lg text-[10px] font-mono text-slate-500 dark:text-slate-400">
+                            +{project.technologies.length - 4}
+                          </span>
+                        )}
                       </div>
                     </div>
-                  )}
-                </div>
-
-                {/* Content Body */}
-                <div className="p-6">
-                  {/* Category & Badge Pills positioned cleanly in the body */}
-                  <div className="flex items-center gap-2 mb-2.5">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20">
-                      {project.badge}
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-emerald-500/10">
-                      {project.category}
-                    </span>
                   </div>
 
-                  <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-xs font-medium text-emerald-600 dark:text-emerald-400 mt-0.5 mb-2.5">
-                    {project.subtitle}
-                  </p>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-
-                  {/* Key Highlights from Resume */}
-                  <div className="space-y-1.5 mb-4">
-                    {project.features.slice(0, 2).map((feat, fIdx) => (
-                      <div key={fIdx} className="flex items-start gap-2 text-[11px] text-slate-600 dark:text-slate-400">
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
-                        <span className="line-clamp-2">{feat}</span>
+                  {/* Bottom Card Footer Actions */}
+                  <div className="p-6 pt-0 flex flex-col gap-3">
+                    
+                    {/* Resume-style separate Frontend & Backend GitHub buttons if available */}
+                    {project.githubFrontendUrl && project.githubBackendUrl && (
+                      <div className="flex items-center gap-2 pt-2 border-t border-slate-100 dark:border-emerald-500/10">
+                        <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500">
+                          GitHub:
+                        </span>
+                        <a
+                          href={project.githubFrontendUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 border border-slate-200 dark:border-emerald-500/20 transition-colors flex items-center gap-1"
+                        >
+                          <Github className="w-3 h-3" />
+                          <span>Frontend</span>
+                        </a>
+                        <a
+                          href={project.githubBackendUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 border border-slate-200 dark:border-emerald-500/20 transition-colors flex items-center gap-1"
+                        >
+                          <Github className="w-3 h-3" />
+                          <span>Backend</span>
+                        </a>
                       </div>
-                    ))}
-                  </div>
-
-                  {/* Tech Stack Pills */}
-                  <div className="flex flex-wrap gap-1 pt-1">
-                    {project.technologies.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-0.5 rounded-lg text-[10px] font-mono bg-slate-100 dark:bg-emerald-950/30 text-slate-700 dark:text-emerald-300 border border-slate-200/80 dark:border-emerald-500/15"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 4 && (
-                      <span className="px-1.5 py-0.5 rounded-lg text-[10px] font-mono text-slate-500 dark:text-slate-400">
-                        +{project.technologies.length - 4}
-                      </span>
                     )}
-                  </div>
-                </div>
-              </div>
 
-              {/* Bottom Card Footer Actions */}
-              <div className="p-6 pt-0 flex flex-col gap-3">
-                
-                {/* Resume-style separate Frontend & Backend GitHub buttons if available */}
-                {project.githubFrontendUrl && project.githubBackendUrl && (
-                  <div className="flex items-center gap-2 pt-2 border-t border-slate-100 dark:border-emerald-500/10">
-                    <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500">
-                      GitHub:
-                    </span>
-                    <a
-                      href={project.githubFrontendUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 border border-slate-200 dark:border-emerald-500/20 transition-colors flex items-center gap-1"
-                    >
-                      <Github className="w-3 h-3" />
-                      <span>Frontend</span>
-                    </a>
-                    <a
-                      href={project.githubBackendUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 border border-slate-200 dark:border-emerald-500/20 transition-colors flex items-center gap-1"
-                    >
-                      <Github className="w-3 h-3" />
-                      <span>Backend</span>
-                    </a>
-                  </div>
-                )}
-
-                <div className="flex items-center justify-between gap-3">
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 focus:outline-none group/btn"
-                  >
-                    <span>Architecture Details</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                  </button>
-
-                  {!project.githubFrontendUrl && (
-                    <div className="flex items-center gap-2">
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`View ${project.title} on GitHub`}
-                        className="p-2 rounded-xl bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 dark:hover:text-white border border-slate-200 dark:border-emerald-500/20 hover:border-emerald-500/40 transition-colors"
+                    <div className="flex items-center justify-between gap-3">
+                      <button
+                        onClick={() => setSelectedProject(project)}
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 focus:outline-none group/btn"
                       >
-                        <Github className="w-3.5 h-3.5" />
-                      </a>
+                        <span>Architecture Details</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                      </button>
+
+                      {!project.githubFrontendUrl && (
+                        <div className="flex items-center gap-2">
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`View ${project.title} on GitHub`}
+                            className="p-2 rounded-xl bg-slate-100 dark:bg-emerald-950/40 text-slate-700 dark:text-emerald-300 hover:text-emerald-600 dark:hover:text-white border border-slate-200 dark:border-emerald-500/20 hover:border-emerald-500/40 transition-colors"
+                          >
+                            <Github className="w-3.5 h-3.5" />
+                          </a>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              </div>
+                  </div>
+                </>
+              )}
             </motion.div>
           ))}
         </div>
