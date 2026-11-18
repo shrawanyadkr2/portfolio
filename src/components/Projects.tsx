@@ -90,10 +90,6 @@ export const Projects: React.FC = () => {
                             playsInline
                             className="w-full h-full object-cover object-top"
                           />
-                          <div className="absolute top-2 left-2 px-1.5 py-0.5 rounded-md bg-black/70 backdrop-blur-md border border-white/10 flex items-center gap-1 text-[9px] font-mono text-emerald-400">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                            <span>DEMO</span>
-                          </div>
                         </div>
                         {/* Bottom bar */}
                         <div className="w-16 h-1 bg-slate-500/50 rounded-full mt-1.5 shrink-0" />
@@ -110,10 +106,6 @@ export const Projects: React.FC = () => {
                             alt={project.title}
                             className="w-full h-full object-cover object-top"
                           />
-                          <div className="absolute top-2 left-2 px-1.5 py-0.5 rounded-md bg-black/70 backdrop-blur-md border border-white/10 flex items-center gap-1 text-[9px] font-mono text-amber-300">
-                            <Smartphone className="w-2.5 h-2.5" />
-                            <span>FIGMA UI</span>
-                          </div>
                         </div>
                         <div className="w-16 h-1 bg-slate-500/50 rounded-full mt-1.5 shrink-0" />
                       </div>
