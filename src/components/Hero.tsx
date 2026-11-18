@@ -35,9 +35,9 @@ export const Hero: React.FC = () => {
 
             {/* Main Heading */}
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-4">
-              HI, I'M <br className="hidden sm:inline" />
+              Hi, I'm <br className="hidden sm:inline" />
               <span className="emerald-text-gradient dark:emerald-text-gradient-bright drop-shadow-sm">
-                SHRAWAN KR. YADAV
+                Shrawan Kr. Yadav
               </span>
             </h1>
 

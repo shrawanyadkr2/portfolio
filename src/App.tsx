@@ -19,10 +19,10 @@ export const App: React.FC = () => {
       {/* Main Content Sections */}
       <main>
         <Hero />
-        <About />
-        <Skills />
-        <MobileShowcase />
         <Projects />
+        <MobileShowcase />
+        <Skills />
+        <About />
         <ExperienceTimeline />
         <CodingProfiles />
         <Contact />
